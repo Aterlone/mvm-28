@@ -19,22 +19,14 @@ var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wa
 
 var GRAVITY = 80
 var jump_height = 1800 
-var twirl_height = jump_height / 3
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
 var run_speed_max = 750
 var run_accel = 75
 var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
-var wall_jump_speed_x = run_speed_max * 2
-var wall_jump_speed_y = jump_height * 0.75
-var wall_jump_friction = 0.4
-
 var terminal_speed_x = 1800
 var terminal_speed_y = 2880
-
-var flag_pole = false # in flag pole mode
-var flag_pole_node = null
 
 var current_animation = ""
 
@@ -42,23 +34,14 @@ var current_animation = ""
 func _ready() -> void:
 	# time of which player can still fully jump after falling off of a ledge
 	$CoyoteT.connect("timeout", on_CoyoteT_timeout)
-	$FallDeathT.connect("timeout", on_FallDeathT_timeout)
-
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"): MAIN.end_level(); return
-	
-	if flag_pole: run_flag_pole(); return
-	
+		
 	get_controls()
 	movement()
 	
 	animate()
-	
-	if $EntityCollider.get_overlapping_areas().size() > 0:
-		# death
-		fall_to_death()
-		return
 
 
 func animate():
@@ -161,18 +144,12 @@ func movement_y():
 	# jump clause
 	if button_jump == 1 and can_jump:
 		$JumpDurationT.start()
-		if touching_wall and !is_on_floor():
-			impulse.x = wall_jump_speed_x * delta * -wall_jump_dir
-			velocity.y = wall_jump_speed_y * delta
-			$WallCollider.scale.x *= -1
-			$Sprite3D.scale.x *= -1
-		else:
-			jumps += 1
-			if jumps == 1:
-				velocity.y = jump_height * delta
-			elif jumps > 1 and $TwirlDurationT.is_stopped():
-				$TwirlDurationT.start()
-				velocity.y = twirl_height * delta
+		jumps += 1
+		if jumps == 1:
+			velocity.y = jump_height * delta
+		elif jumps > 1 and $TwirlDurationT.is_stopped():
+			$TwirlDurationT.start()
+			velocity.y = delta
 	
 	# jump follow-through
 	var gravity_coef = 1
@@ -189,9 +166,6 @@ func movement_y():
 	
 	# speed cap y
 	var delta_terminal_speed_y = terminal_speed_y * delta
-	if touching_wall and velocity.y < 0:
-		delta_terminal_speed_y *= wall_jump_friction
-	
 	velocity.y = clamp(velocity.y, -delta_terminal_speed_y, delta_terminal_speed_y)
 
 
@@ -209,61 +183,4 @@ func movement():
 
 
 func die():
-	MAIN.LIVES -= 1
-	if MAIN.LIVES < 0:
-		MAIN.end_level()
-		MAIN.LIVES = MAIN.BASE_LIVES
-	else:
-		MAIN.restart_level()
-
-
-func on_flag_pole(new_flag_pole_node):
-	"""Called by flag_pole when player is overlapping the pole collider"""
-	if !flag_pole:
-		flag_pole = true
-		flag_pole_node = new_flag_pole_node
-		global_position.x = flag_pole_node.global_position.x
-		global_position.z = flag_pole_node.global_position.z
-		$FlagPoleDelayT.start()
-
-
-func run_flag_pole():
-	"""Execute simple flag pole animation for exiting levels"""
-	var slide_speed = 0.1
-	var walk_speed = run_speed_max * 0.01
-	if !$FlagPoleDelayT.is_stopped(): return # pause for dramatic delay
-	
-	
-	if abs(global_position.y - flag_pole_node.global_position.y) < slide_speed * 2:
-		# at bottom of pole so lock y to pole base y
-		global_position.y = flag_pole_node.global_position.y
-	else:
-		# slide down pole
-		global_position.y -= slide_speed
-		return
-	
-	# walk off screen
-	global_position.x += walk_speed * get_physics_process_delta_time()
-	cam_locked = true
-	
-	if (global_position.x - flag_pole_node.global_position.x) > 20:
-		# 20 units is off screen so close level
-		MAIN.end_level()
-
-
-func fall_to_death():
-	# starts death timer and locks cam
-	cam_locked = true
-	if $FallDeathT.is_stopped():
-		$FallDeathT.start()
-
-
-func on_FallDeathT_timeout():
-	die()
-
-var bounce_height = 3000
-func on_spring():
-	"""Called by Spring when player is overlapping the bounce collider"""
-	var delta = get_physics_process_delta_time()
-	jumps+=1
-	velocity.y = bounce_height * delta
+	pass
