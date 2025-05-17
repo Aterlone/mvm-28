@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2d55bwahj8jr"]
+
+[ext_resource type="Script" uid="uid://0gcgoud58ii8" path="res://LevelGeneral/water.gd" id="1_2luns"]
+
+[node name="Water" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_2luns")
+
+[node name="WaterCollider" type="CollisionShape2D" parent="."]
+
+[node name="WaterSprite" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.407843, 0.509804, 0.384314)

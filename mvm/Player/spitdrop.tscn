@@ -16,6 +16,7 @@ shape = SubResource("CircleShape2D_pp3et")
 
 [node name="PlayerSpriteSheet" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(0, -9)
-scale = Vector2(0.5625, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_drj3a")
+hframes = 4
+frame = 2

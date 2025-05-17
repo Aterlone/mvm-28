@@ -23,13 +23,20 @@ var GRAVITY = 750
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
 var run_speed_max = 9000
-var run_accel = 150000
+@export var run_accel = 100
+
 var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
 var terminal_speed_x = 3600000
 var terminal_speed_y = 5760000
 
 var current_animation = ""
+
+var abilities = {
+	"harden" : false,
+	"bubble" : false,
+	"swim" : false
+}
 
 
 func _ready() -> void:
@@ -39,7 +46,6 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"): MAIN.end_level(); return
 		
 	get_controls()
 	movement()
@@ -220,11 +226,70 @@ func bubble():
 	move_and_slide()
 
 
+func water(can_swim):
+	jumps = 99
+	var delta = get_physics_process_delta_time()
+	# storing the movement x values in vars to modify when crouched and add delta
+	var delta_run_speed_max = run_speed_max * delta
+	var delta_run_accel = run_accel * delta
+	
+	var delta_terminal_speed_x = run_speed_max * delta * 0.85
+	var delta_terminal_speed_y = run_speed_max * delta * 0.85
+	
+	var swim_speed = 0.3
+	var slow_speed = 0.1
+	
+	if joy_x != 0:
+		delta_run_accel *= swim_speed
+	else:
+		delta_run_accel *= slow_speed
+	
+	velocity.x = move_toward(
+		velocity.x,
+		joy_x * delta_run_speed_max,
+		delta_run_accel
+		)
+	
+	# prevent extreme speed with a speed cap
+	velocity.x = clamp(velocity.x, -delta_terminal_speed_x, delta_terminal_speed_x)
+	
+	delta_run_accel = run_accel * delta
+	if joy_x != 0:
+		delta_run_accel *= swim_speed
+	else:
+		delta_run_accel *= slow_speed
+		
+		
+	velocity.y = move_toward(
+		velocity.y,
+		-joy_y * delta_run_speed_max,
+		delta_run_accel
+		)
+	
+	
+	
+	# prevent extreme speed with a speed cap
+	velocity.y = clamp(velocity.y, -delta_terminal_speed_y, delta_terminal_speed_y)
+	
+	
+	move_and_slide()
+	
+	if button_jump != 0 or !can_swim:
+		velocity.y -= GRAVITY * delta
+		if button_jump != 0:
+			if $ExitWaterDetector.get_overlapping_areas().size() == 0:
+				velocity.y = jump_height * 0.85 * delta
+
+
 func movement():
 	
-	if joy_y == -1:
+	if $WaterDetector.get_overlapping_areas().size() > 0:
+		water(abilities["swim"])
+		return
+	
+	if joy_y == -1 and abilities["harden"]:
 		hardened()
-	elif joy_y == 1 and velocity.y > 0:
+	elif joy_y == 1 and velocity.y > 0 and abilities["bubble"]:
 		bubble()
 	else:
 		movement_x()

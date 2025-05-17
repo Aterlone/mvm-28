@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvdks2bkf3f34"]
+[gd_scene load_steps=6 format=3 uid="uid://dvdks2bkf3f34"]
 
 [ext_resource type="Texture2D" uid="uid://527bk10nkcgd" path="res://Player/PlayerAssets/player_sprite_sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cn8gax1syxxjh" path="res://Player/player.gd" id="1_onrkg"]
@@ -6,11 +6,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(20, 14)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
+radius = 6.0
+height = 14.0
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
+collision_layer = 0
 script = ExtResource("1_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4flbx")
@@ -26,3 +35,20 @@ one_shot = true
 [node name="CoyoteT" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="WaterDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="WaterCollider" type="CollisionShape2D" parent="WaterDetector"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_4ntmi")
+
+[node name="ExitWaterDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="WaterCollider" type="CollisionShape2D" parent="ExitWaterDetector"]
+position = Vector2(0, 3)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_4ntmi")
