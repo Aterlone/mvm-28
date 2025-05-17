@@ -3,10 +3,10 @@ extends Node2D
 @export var next_level_index = 0
 
 @export_enum (
-	"clean",
-	"waste",
-	"water",
-	"water-waste"
+	"city",
+	"central",
+	"wastes",
+	"depths"
 ) var room_name : String
 	
 @export var room_number : int
