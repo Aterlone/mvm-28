@@ -15,18 +15,18 @@ var jumping = false # is player jumping?
 var jump_position = Vector2.ZERO # records position player jumped from - used in cam script
 var jumps = 0 # number of times jumped
 
-@export var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
+var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
 
-@export var GRAVITY = -500
-@export var jump_height = 1800 
-@export var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
+var GRAVITY = -750
+var jump_height = -20000 
+var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
-@export var run_speed_max = 750
-@export var run_accel = 75
-@export var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
+var run_speed_max = 9000
+var run_accel = 150000
+var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
-@export var terminal_speed_x = 1800
-@export var terminal_speed_y = 2880
+var terminal_speed_x = 3600000
+var terminal_speed_y = 5760000
 
 var current_animation = ""
 
