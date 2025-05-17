@@ -2,12 +2,54 @@
 
 [node name="WorldMap" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Central" type="Node2D" parent="."]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+position = Vector2(22, 173)
 
-[node name="Label" type="Label" parent="."]
+[node name="AreaName" type="Label" parent="Central"]
+offset_top = -23.0
 offset_right = 40.0
-offset_bottom = 23.0
+text = "Central"
 
-[node name="Node" type="Node2D" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Central"]
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="City" type="Node2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(151, 27)
+
+[node name="AreaName" type="Label" parent="City"]
+offset_top = -23.0
+offset_right = 40.0
+text = "City"
+
+[node name="ColorRect" type="ColorRect" parent="City"]
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="Depths" type="Node2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(114, 312)
+
+[node name="AreaName" type="Label" parent="Depths"]
+offset_top = -23.0
+offset_right = 40.0
+text = "Depths"
+
+[node name="ColorRect" type="ColorRect" parent="Depths"]
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="Wastes" type="Node2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(312, 178)
+
+[node name="AreaName" type="Label" parent="Wastes"]
+offset_top = -23.0
+offset_right = 40.0
+text = "Wastes"
+
+[node name="ColorRect" type="ColorRect" parent="Wastes"]
+offset_right = 200.0
+offset_bottom = 100.0
