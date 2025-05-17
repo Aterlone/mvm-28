@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://bs5nmbx53i0iw"]
+[gd_scene load_steps=2 format=3 uid="uid://dvdks2bkf3f34"]
+
+[ext_resource type="Texture2D" uid="uid://527bk10nkcgd" path="res://PlayerAssets/player_sprite_sheet.png" id="1_4flbx"]
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
