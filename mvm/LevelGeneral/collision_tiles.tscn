@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkqvjvfug6xgy"]
+
+[ext_resource type="Texture2D" uid="uid://b2nt811rmwbbj" path="res://LevelGeneral/BaseTile.png" id="1_ow11y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okihv"]
+texture = ExtResource("1_ow11y")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_gfxtx"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_okihv")
+
+[node name="CollisionTiles" type="TileMapLayer"]
+tile_set = SubResource("TileSet_gfxtx")
