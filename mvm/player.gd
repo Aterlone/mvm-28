@@ -15,18 +15,18 @@ var jumping = false # is player jumping?
 var jump_position = Vector2.ZERO # records position player jumped from - used in cam script
 var jumps = 0 # number of times jumped
 
-var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
+@export var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
 
-var GRAVITY = 80
-var jump_height = 1800 
-var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
+@export var GRAVITY = -500
+@export var jump_height = 1800 
+@export var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
-var run_speed_max = 750
-var run_accel = 75
-var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
+@export var run_speed_max = 750
+@export var run_accel = 75
+@export var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
-var terminal_speed_x = 1800
-var terminal_speed_y = 2880
+@export var terminal_speed_x = 1800
+@export var terminal_speed_y = 2880
 
 var current_animation = ""
 
@@ -127,7 +127,7 @@ func movement_y():
 	
 	# jump clause
 	if button_jump == 1 and can_jump:
-		$JumpDurationT.start()
+		#$JumpDurationT.start()
 		jumps += 1
 		if jumps == 1:
 			velocity.y = jump_height * delta
