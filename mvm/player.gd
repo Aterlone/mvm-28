@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends CharacterBody2D
 
 
 @onready var MAIN = get_tree().get_root().get_child(0)
@@ -12,7 +12,7 @@ var joy_y = 0 # -1 = down, 1 = up
 var button_jump = 0
 
 var jumping = false # is player jumping?
-var jump_position = Vector3.ZERO # records position player jumped from - used in cam script
+var jump_position = Vector2.ZERO # records position player jumped from - used in cam script
 var jumps = 0 # number of times jumped
 
 var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
@@ -32,8 +32,7 @@ var current_animation = ""
 
 
 func _ready() -> void:
-	# time of which player can still fully jump after falling off of a ledge
-	$CoyoteT.connect("timeout", on_CoyoteT_timeout)
+	pass
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"): MAIN.end_level(); return
@@ -46,7 +45,7 @@ func _physics_process(delta: float) -> void:
 
 func animate():
 	if (joy_x != 0):
-		$Sprite3D.scale.x = sign(joy_x)
+		$Sprite2D.scale.x = sign(joy_x)
 	current_animation = ""
 	if is_on_floor():
 		if is_zero_approx(velocity.x):
@@ -54,19 +53,13 @@ func animate():
 		else:
 			current_animation = "walk"
 	else:
-		if $WallCollider.get_overlapping_bodies().size() > 0:
-			current_animation = "wall slide"
-			return
-		if !$TwirlDurationT.is_stopped():
-			current_animation = "twirl"
-			return
 		if velocity.y > 0:
 			current_animation = "jump"
 		else:
 			current_animation = "fall"
 	
-	if $AnimationPlayer.has_animation(current_animation.capitalize()):
-		$AnimationPlayer.play(current_animation.capitalize())
+	#if $AnimationPlayer.has_animation(current_animation.capitalize()):
+		#$AnimationPlayer.play(current_animation.capitalize())
 
 
 func get_controls():
@@ -110,9 +103,6 @@ func setup_movement_y():
 		jump_position = global_position
 		jumping = false
 		jumps = 0
-	else:
-		if jumps == 0 and $CoyoteT.is_stopped():
-			$CoyoteT.start()
 
 
 func on_CoyoteT_timeout():
@@ -130,16 +120,10 @@ func movement_y():
 	
 	var delta = get_physics_process_delta_time()
 	
-	# wall jump setup
-	var touching_wall = ($WallCollider.get_overlapping_bodies().size() > 0)
-	var wall_jump_dir = $WallCollider.scale.x
-	# wall jump collider is set AFTER touching_wall to prevent frame perfect wall jump bugs.
-	if joy_x != 0: $WallCollider.scale.x = joy_x
-	
 	setup_movement_y()
 	
 	# jump setup
-	var can_jump = !jumping or touching_wall
+	var can_jump = !jumping
 	
 	# jump clause
 	if button_jump == 1 and can_jump:
@@ -147,19 +131,10 @@ func movement_y():
 		jumps += 1
 		if jumps == 1:
 			velocity.y = jump_height * delta
-		elif jumps > 1 and $TwirlDurationT.is_stopped():
-			$TwirlDurationT.start()
-			velocity.y = delta
 	
 	# jump follow-through
 	var gravity_coef = 1
-	if !$JumpDurationT.is_stopped() and button_jump > 0 and velocity.y > 0:
-		if impulse.x == 0:
-			# this allows the player to jump higher if the button is held down.
-			# only active during regular jump and NOT wall jump
-			gravity_coef = gravity_jump_quotient
-	else:
-		impulse.x = 0
+
 	
 	# gravity
 	velocity.y -= GRAVITY * delta * gravity_coef
@@ -175,7 +150,6 @@ func movement():
 	movement_y()
 	
 	# keeps player from falling off
-	global_position.z = 0.0
 	# prevents getting stuck on gridmap collision shapes
 	max_slides = 200
 	
