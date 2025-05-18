@@ -120,9 +120,7 @@ func get_controls():
 			abilities["harden"] = true
 		else:
 			abilities["harden"] = false
-
-		
-
+	
 	
 	if Input.get_action_strength("jump") > 0:
 		button_jump += 1
