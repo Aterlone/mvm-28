@@ -107,6 +107,16 @@ func get_controls():
 	joy_x = sign(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	if joy_x != 0:
 		x_direction = joy_x
+	if Input.is_key_pressed(KEY_G):
+		abilities["swim"] = true
+	else:
+		if Input.is_key_pressed(KEY_UP) and !abilities["swim"]:
+			abilities["bubble"] = true
+		
+		if Input.is_key_pressed(KEY_DOWN) and !abilities["swim"]:
+			abilities["harden"] = true
+		
+
 	
 	if Input.get_action_strength("jump") > 0:
 		button_jump += 1
@@ -282,7 +292,7 @@ func water(can_swim):
 
 
 func movement():
-	
+	print(abilities)
 	if $WaterDetector.get_overlapping_areas().size() > 0:
 		water(abilities["swim"])
 		return
