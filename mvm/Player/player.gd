@@ -110,11 +110,17 @@ func get_controls():
 	if Input.is_key_pressed(KEY_G):
 		abilities["swim"] = true
 	else:
-		if Input.is_key_pressed(KEY_UP) and !abilities["swim"]:
+		abilities["swim"] = false
+		if Input.is_key_pressed(KEY_UP):
 			abilities["bubble"] = true
-		
-		if Input.is_key_pressed(KEY_DOWN) and !abilities["swim"]:
+		else:
+			abilities["bubble"] = false
+
+		if Input.is_key_pressed(KEY_DOWN):
 			abilities["harden"] = true
+		else:
+			abilities["harden"] = false
+
 		
 
 	
