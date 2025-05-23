@@ -313,3 +313,8 @@ func movement():
 
 func die():
 	pass
+
+
+func _on_warp_detector_area_entered(area: Area2D) -> void:
+	if $WarpDelayT.is_stopped():
+		MAIN.warp(area)

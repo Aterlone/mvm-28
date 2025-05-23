@@ -1,10 +1,8 @@
-extends Node2D
-
-@export var next_level_index = 0
+extends Area2D
 
 @export_enum (
-	"city",
 	"central",
+	"city",
 	"wastes",
 	"depths"
 ) var room_name : String
@@ -46,3 +44,7 @@ extends Node2D
 	"Y",
 	"Z",
 ) var room_char : String
+
+
+func _ready() -> void:
+	name = "Warp" + room_char

@@ -52,3 +52,16 @@ collision_mask = 32
 position = Vector2(0, 3)
 rotation = 1.57079
 shape = SubResource("CapsuleShape2D_4ntmi")
+
+[node name="WarpDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="WaterCollider" type="CollisionShape2D" parent="WarpDetector"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_4ntmi")
+
+[node name="WarpDelayT" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="WarpDetector" to="." method="_on_warp_detector_area_entered"]

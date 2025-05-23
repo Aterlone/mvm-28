@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://u2qm2uwdhvob" path="res://warp_zone.gd" id="1_1ro7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ro7h"]
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
-[node name="WarpZone" type="Node2D"]
+[node name="WarpZone" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_1ro7h")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16, 16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1ro7h")
