@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dypwcgff6v4bk"]
+[gd_scene load_steps=7 format=4 uid="uid://c7qh8xrxnwkkv"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_uuxhx"]
 [ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="2_8noim"]

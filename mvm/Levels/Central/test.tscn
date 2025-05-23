@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://57il7b3f417t"]
+[gd_scene load_steps=5 format=4 uid="uid://b2uetpogostub"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_s2pfo"]
 [ext_resource type="PackedScene" uid="uid://b2d55bwahj8jr" path="res://LevelGeneral/water.tscn" id="2_4lhrh"]
