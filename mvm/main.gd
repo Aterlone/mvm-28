@@ -27,3 +27,4 @@ func warp(warp_node):
 	PLAYER.global_position = new_warp.global_position
 	PLAYER.get_node("Camera2D").reset_smoothing()
 	PLAYER.get_node("WarpDelayT").start()
+	PLAYER.set_camera_border()

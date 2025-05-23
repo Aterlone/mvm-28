@@ -43,7 +43,21 @@ func _ready() -> void:
 	var size = Vector2i(640, 360) * 2
 	get_window().size = size
 	get_window().move_to_center()
+	set_camera_border()
 	pass
+
+
+func set_camera_border():
+	if get_parent().get_node("RoomContainer").get_children().size() <= 0:
+		return
+	var tiles = get_parent().get_node("RoomContainer").get_child(0).get_node("CollisionTiles")
+	var tiles_rect = tiles.get_used_rect()  # format: pos x, pos y, end x, end y
+	var tiles_cell_size = tiles.tile_set.tile_size
+	$Camera2D.limit_top = tiles_rect.position.y * tiles_cell_size.y
+	$Camera2D.limit_bottom = tiles_rect.end.y * tiles_cell_size.y
+	$Camera2D.limit_left = tiles_rect.position.x * tiles_cell_size.x
+	$Camera2D.limit_right = tiles_rect.end.x * tiles_cell_size.x
+
 
 func _physics_process(delta: float) -> void:
 		
