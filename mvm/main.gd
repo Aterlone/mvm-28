@@ -14,7 +14,6 @@ func warp(warp_node):
 	
 	await get_tree().process_frame
 	
-	#res://Levels/Central/central_10.tscn
 	var new_level_file = "res://Levels/" + next_area.capitalize() + "/" + (next_area + next_room).to_snake_case() + ".tscn" 
 	
 	print(new_level_file)
