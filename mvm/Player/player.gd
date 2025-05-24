@@ -19,15 +19,15 @@ var jump_position = Vector2.ZERO # records position player jumped from - used in
 var jumps = 0 # number of times jumped
 
 var GRAVITY = 750
-@export var jump_height = -20000 
+@export var jump_height = -40000 
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
-var run_speed_max = 9000
+var run_speed_max = 9500
 @export var run_accel = 100
 
 var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
-var terminal_speed_x = 3600000
+var terminal_speed_x = 4000000
 var terminal_speed_y = 5760000
 
 var current_animation = ""
@@ -126,7 +126,7 @@ func get_controls():
 		abilities["swim"] = true
 	else:
 		abilities["swim"] = false
-		if Input.is_key_pressed(KEY_UP):
+		if Input.is_key_pressed(KEY_SPACE):
 			abilities["bubble"] = true
 		else:
 			abilities["bubble"] = false
@@ -333,7 +333,6 @@ func die():
 func _on_warp_detector_area_entered(area: Area2D) -> void:
 	if $WarpDelayT.is_stopped():
 		MAIN.warp(area)
-
 
 func _on_damage_detector_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DangerReturn"):

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://biyuwindes0o5"]
+[gd_scene load_steps=0 format=3 uid="uid://biyuwindes0o5"]
 
 [node name="DangerArea" type="Area2D"]
 collision_layer = 64
