@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=4 uid="uid://by2j4sdpsy4at"]
+[gd_scene load_steps=7 format=4 uid="uid://by2j4sdpsy4at"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_7bmkf"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_opta5"]
+[ext_resource type="PackedScene" uid="uid://b140gvw8ehff" path="res://Enemies/slug.tscn" id="3_opta5"]
+[ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="4_ypeva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql7m5"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8nrq"]
+size = Vector2(48, 64)
 
 [node name="Central30" type="Node2D"]
 
@@ -33,3 +41,31 @@ room_name = "central"
 room_number = 40
 direction = "down"
 room_char = "E"
+
+[node name="EnemyContainer" type="Node" parent="."]
+
+[node name="Slug" parent="EnemyContainer" instance=ExtResource("3_opta5")]
+position = Vector2(587, 328)
+
+[node name="Slug2" parent="EnemyContainer" instance=ExtResource("3_opta5")]
+position = Vector2(796, 186)
+
+[node name="Slug3" parent="EnemyContainer" instance=ExtResource("3_opta5")]
+position = Vector2(456, 77)
+
+[node name="DangerReturnArea" parent="." instance=ExtResource("4_ypeva")]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" parent="DangerReturnArea" index="0"]
+position = Vector2(495, 272)
+shape = SubResource("RectangleShape2D_ql7m5")
+
+[node name="DangerReturnArea2" parent="." instance=ExtResource("4_ypeva")]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" parent="DangerReturnArea2" index="0"]
+position = Vector2(872, 256)
+shape = SubResource("RectangleShape2D_e8nrq")
+
+[editable path="DangerReturnArea"]
+[editable path="DangerReturnArea2"]

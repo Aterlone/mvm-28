@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://c4lfofogoi7bk"]
+[gd_scene load_steps=4 format=4 uid="uid://c4lfofogoi7bk"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_qfu27"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_wp7td"]
+[ext_resource type="PackedScene" uid="uid://dmqxucfiauuqr" path="res://Enemies/snail.tscn" id="3_wp7td"]
 
 [node name="Central40" type="Node2D"]
 
@@ -25,3 +26,11 @@ room_name = "central"
 room_number = 50
 direction = "left"
 room_char = "F"
+
+[node name="EnemyContainer" type="Node" parent="."]
+
+[node name="Slug3" parent="EnemyContainer" instance=ExtResource("3_wp7td")]
+position = Vector2(991, 178)
+
+[node name="Slug2" parent="EnemyContainer" instance=ExtResource("3_wp7td")]
+position = Vector2(797, -238)
