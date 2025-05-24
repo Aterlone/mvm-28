@@ -348,7 +348,7 @@ func _on_warp_detector_area_entered(area: Area2D) -> void:
 
 func _on_damage_detector_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DangerReturn"):
-		safe_position = area.global_position + 0.5 * Vector2(0,area.get_child(0).shape.size.y - $MainCollider.shape.size.y)
+		safe_position = area.get_child(0).global_position + 0.5 * Vector2(0,area.get_child(0).shape.size.y - $MainCollider.shape.size.y)
 	else:
 		if safe_position != null:
 			global_position = safe_position

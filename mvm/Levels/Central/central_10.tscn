@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b2xtyv83rcjtu"]
+[gd_scene load_steps=12 format=4 uid="uid://b2xtyv83rcjtu"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_s2pfo"]
 [ext_resource type="PackedScene" uid="uid://biyuwindes0o5" path="res://LevelGeneral/danger_area.tscn" id="3_3bcvm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="5_i42ts"]
 [ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="6_85g7k"]
 [ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="7_85g7k"]
+[ext_resource type="Texture2D" uid="uid://cyfw7b2am8dt5" path="res://Art/Central/BrickWall.png" id="8_ftfp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i42ts"]
 size = Vector2(304, 32)
@@ -17,7 +18,7 @@ size = Vector2(64, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftfp2"]
 size = Vector2(64, 275.5)
 
-[node name="Central11" type="Node2D"]
+[node name="Central12" type="Node2D"]
 
 [node name="WarpZones" type="Node" parent="."]
 
@@ -282,6 +283,15 @@ texture = ExtResource("7_85g7k")
 position = Vector2(296, 112)
 rotation = 1.57079
 texture = ExtResource("7_85g7k")
+
+[node name="BrickWall" type="Sprite2D" parent="."]
+z_index = -640
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-184, 168)
+texture = ExtResource("8_ftfp2")
+region_enabled = true
+region_rect = Rect2(0, 0, 1392, 648)
 
 [editable path="DangerArea"]
 [editable path="DangerReturnArea"]
