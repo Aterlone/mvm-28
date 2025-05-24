@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://ddshjbgor4ydj"]
+[gd_scene format=3 uid="uid://ddshjbgor4ydj"]
 
 [node name="DangerReturnArea" type="Area2D" groups=["DangerReturn"]]
 collision_layer = 128
