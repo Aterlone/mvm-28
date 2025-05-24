@@ -38,6 +38,7 @@ var abilities = {
 	"swim" : false
 }
 
+var safe_position = null
 
 func _ready() -> void:
 	var size = Vector2i(640, 360) * 2
@@ -332,3 +333,12 @@ func die():
 func _on_warp_detector_area_entered(area: Area2D) -> void:
 	if $WarpDelayT.is_stopped():
 		MAIN.warp(area)
+
+
+func _on_damage_detector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("DangerReturn"):
+		safe_position = area.global_position
+	else:
+		if safe_position != null:
+			global_position = safe_position
+	

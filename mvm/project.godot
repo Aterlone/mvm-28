@@ -63,6 +63,8 @@ attack={
 2d_physics/layer_4="EnemyBody"
 2d_physics/layer_5="WarpZone"
 2d_physics/layer_6="Water"
+2d_physics/layer_7="Dangerous"
+2d_physics/layer_8="DangerReturnArea"
 
 [rendering]
 

@@ -61,7 +61,16 @@ collision_mask = 16
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_4ntmi")
 
+[node name="DamageDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 192
+
+[node name="WaterCollider" type="CollisionShape2D" parent="DamageDetector"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_4ntmi")
+
 [node name="WarpDelayT" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="area_entered" from="WarpDetector" to="." method="_on_warp_detector_area_entered"]
+[connection signal="area_entered" from="DamageDetector" to="." method="_on_damage_detector_area_entered"]
