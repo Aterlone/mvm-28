@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 	var enemy_hit = false
 	if $HitBox.get_overlapping_areas().size() > 0:
 		for area in $HitBox.get_overlapping_areas():
-			if area.get_parent().name == "Slug":
+			if area.get_parent().get_parent().name == "EnemyContainer":
 				area.get_parent().queue_free()
 				enemy_hit = true
 	if enemy_hit:
