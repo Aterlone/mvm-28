@@ -59,230 +59,77 @@ texture_filter = 1
 texture_repeat = 2
 
 [node name="Grass2Dark" type="Sprite2D" parent="WallDetail"]
-position = Vector2(144, 211)
+position = Vector2(951, 338)
 texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(64, 0, 192, 256)
-
-[node name="GrassCorner" type="Sprite2D" parent="WallDetail"]
-position = Vector2(67, 200)
-texture = ExtResource("6_85g7k")
-
-[node name="GrassCorner2" type="Sprite2D" parent="WallDetail"]
-position = Vector2(217, 223)
-rotation = -1.57079
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 0, 96, 128)
-
-[node name="GrassCorner4" type="Sprite2D" parent="WallDetail"]
-position = Vector2(374, 259)
-rotation = -1.57079
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 0, 96, 128)
 
 [node name="Grass2Dark2" type="Sprite2D" parent="WallDetail"]
-position = Vector2(183, 131)
-rotation = 3.14159
+position = Vector2(533, 216)
 texture = ExtResource("5_i42ts")
-
-[node name="GrassCorner3" type="Sprite2D" parent="WallDetail"]
-position = Vector2(65, 142)
-rotation = 1.57079
-texture = ExtResource("6_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 80, 112, 80)
 
 [node name="Grass2Dark3" type="Sprite2D" parent="WallDetail"]
-position = Vector2(276, 161)
+position = Vector2(356, 148)
+rotation = 1.57079
 texture = ExtResource("5_i42ts")
 region_enabled = true
-region_rect = Rect2(64, 80, 80, 72)
+region_rect = Rect2(0, 80, 112, 80)
 
 [node name="Grass2Dark4" type="Sprite2D" parent="WallDetail"]
-position = Vector2(336, 219)
-rotation = 1.57079
+position = Vector2(402, 99)
+rotation = 2.87979
 texture = ExtResource("5_i42ts")
 region_enabled = true
-region_rect = Rect2(64, 80, 80, 72)
-
-[node name="GrassCornerOuter" type="Sprite2D" parent="WallDetail"]
-position = Vector2(226, 164)
-rotation = -1.57079
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="GrassCorner5" type="Sprite2D" parent="WallDetail"]
-position = Vector2(330, 259)
-rotation = -1.57079
-scale = Vector2(1, -1)
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 0, 96, 128)
-
-[node name="GrassCorner6" type="Sprite2D" parent="WallDetail"]
-position = Vector2(526, 271)
-rotation = -1.57079
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 0, 96, 128)
-
-[node name="GrassCorner7" type="Sprite2D" parent="WallDetail"]
-position = Vector2(475, 271)
-rotation = -1.57079
-scale = Vector2(1, -1)
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 16, 96, 112)
-
-[node name="GrassCorner8" type="Sprite2D" parent="WallDetail"]
-position = Vector2(656, 296)
-rotation = -1.57079
-scale = Vector2(1, -1)
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 56, 96, 72)
-
-[node name="GrassCorner9" type="Sprite2D" parent="WallDetail"]
-position = Vector2(680, 344)
-rotation = -1.57079
-scale = Vector2(1, -1)
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(0, 56, 96, 72)
-
-[node name="GrassCornerOuter2" type="Sprite2D" parent="WallDetail"]
-position = Vector2(332, 167)
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
+region_rect = Rect2(0, 80, 112, 80)
 
 [node name="Grass2Dark5" type="Sprite2D" parent="WallDetail"]
-position = Vector2(430, 199)
+position = Vector2(538, 88)
+rotation = 3.14159
 texture = ExtResource("5_i42ts")
 region_enabled = true
-region_rect = Rect2(64, 80, 80, 72)
+region_rect = Rect2(0, 80, 208, 80)
+
+[node name="GrassCorner" type="Sprite2D" parent="WallDetail"]
+position = Vector2(821, 353)
+texture = ExtResource("6_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 48, 128, 80)
+
+[node name="GrassCorner2" type="Sprite2D" parent="WallDetail"]
+position = Vector2(674, 295)
+texture = ExtResource("6_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 32, 128, 96)
+
+[node name="GrassCorner3" type="Sprite2D" parent="WallDetail"]
+position = Vector2(484, 243)
+texture = ExtResource("6_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 56, 128, 72)
+
+[node name="GrassCorner4" type="Sprite2D" parent="WallDetail"]
+position = Vector2(370, 227)
+texture = ExtResource("6_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 56, 128, 72)
+
+[node name="GrassCornerOuter" type="Sprite2D" parent="WallDetail"]
+position = Vector2(796, 280)
+texture = ExtResource("7_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 64)
+
+[node name="GrassCornerOuter2" type="Sprite2D" parent="WallDetail"]
+position = Vector2(650, 216)
+texture = ExtResource("7_85g7k")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 64)
 
 [node name="GrassCornerOuter3" type="Sprite2D" parent="WallDetail"]
-position = Vector2(380, 202)
-rotation = -1.57079
+position = Vector2(458, 198)
 texture = ExtResource("7_85g7k")
 region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="GrassCornerOuter4" type="Sprite2D" parent="WallDetail"]
-position = Vector2(486, 205)
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="Grass2Dark6" type="Sprite2D" parent="WallDetail"]
-position = Vector2(608, 216)
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(64, 80, 96, 72)
-
-[node name="GrassCornerOuter5" type="Sprite2D" parent="WallDetail"]
-position = Vector2(524, 213)
-rotation = -1.57079
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="GrassCornerOuter6" type="Sprite2D" parent="WallDetail"]
-position = Vector2(687, 219)
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="GrassCornerOuter7" type="Sprite2D" parent="WallDetail"]
-position = Vector2(712, 280)
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="GrassCornerOuter8" type="Sprite2D" parent="WallDetail"]
-position = Vector2(811, 260)
-rotation = 3.14159
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="GrassCornerOuter9" type="Sprite2D" parent="WallDetail"]
-position = Vector2(810, 211)
-rotation = 4.71238
-texture = ExtResource("7_85g7k")
-region_enabled = true
-region_rect = Rect2(56, 0, 72, 72)
-
-[node name="Grass2Dark7" type="Sprite2D" parent="WallDetail"]
-position = Vector2(912, 339)
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(0, 0, 400, 256)
-
-[node name="Grass2Dark9" type="Sprite2D" parent="WallDetail"]
-position = Vector2(930, 219)
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(0, 0, 176, 256)
-
-[node name="Grass2Dark12" type="Sprite2D" parent="WallDetail"]
-position = Vector2(183, -55)
-rotation = 3.14159
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(0, 0, 176, 256)
-
-[node name="Grass2Dark8" type="Sprite2D" parent="WallDetail"]
-position = Vector2(1036, 252)
-rotation = -3.14159
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(0, 0, 400, 256)
-
-[node name="Grass2Dark10" type="Sprite2D" parent="WallDetail"]
-position = Vector2(835, 83)
-rotation = -2.81651
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(0, 0, 400, 256)
-
-[node name="Grass2Dark11" type="Sprite2D" parent="WallDetail"]
-position = Vector2(458, -20)
-rotation = -2.94791
-texture = ExtResource("5_i42ts")
-region_enabled = true
-region_rect = Rect2(0, 0, 400, 256)
-
-[node name="GrassCorner10" type="Sprite2D" parent="WallDetail"]
-position = Vector2(987, 190)
-rotation = -1.57079
-texture = ExtResource("6_85g7k")
-region_enabled = true
-region_rect = Rect2(40, 0, 88, 88)
-
-[node name="GrassCorner11" type="Sprite2D" parent="WallDetail"]
-position = Vector2(74, -50)
-rotation = 1.57079
-texture = ExtResource("6_85g7k")
-
-[node name="Grass2Dark13" type="Sprite2D" parent="WallDetail"]
-position = Vector2(195, 19)
-texture = ExtResource("5_i42ts")
-
-[node name="GrassCorner12" type="Sprite2D" parent="WallDetail"]
-position = Vector2(77, 5)
-texture = ExtResource("6_85g7k")
-
-[node name="GrassCornerOuter10" type="Sprite2D" parent="WallDetail"]
-position = Vector2(300, 43)
-texture = ExtResource("7_85g7k")
-
-[node name="GrassCornerOuter11" type="Sprite2D" parent="WallDetail"]
-position = Vector2(296, 112)
-rotation = 1.57079
-texture = ExtResource("7_85g7k")
+region_rect = Rect2(0, 0, 128, 64)
 
 [node name="BrickWall" type="Sprite2D" parent="."]
 z_index = -640
@@ -292,6 +139,7 @@ position = Vector2(-184, 168)
 texture = ExtResource("8_ftfp2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1392, 648)
+metadata/_edit_lock_ = true
 
 [editable path="DangerArea"]
 [editable path="DangerReturnArea"]
