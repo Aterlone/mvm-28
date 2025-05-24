@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b140gvw8ehff"]
+[gd_scene load_steps=8 format=3 uid="uid://b140gvw8ehff"]
 
 [ext_resource type="Script" uid="uid://bywl32vkdw42r" path="res://Enemies/slug.gd" id="1_vgbxq"]
-[ext_resource type="Material" uid="uid://blo2w3hielvpx" path="res://addons/custom_enemy_plugin/FlashShader.tres" id="2_i7s67"]
+[ext_resource type="Material" uid="uid://cf2j6ea4yumkp" path="res://addons/custom_enemy_plugin/FlashShader.tres" id="2_i7s67"]
+[ext_resource type="Texture2D" uid="uid://cmxpwgxkvvtwy" path="res://Enemies/slug.png" id="3_lflwf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7s67"]
 size = Vector2(32, 16)
@@ -18,11 +19,13 @@ height = 32.0
 size = Vector2(16, 16)
 
 [node name="Slug" type="CharacterBody2D"]
+texture_filter = 1
 collision_layer = 0
 script = ExtResource("1_vgbxq")
 metadata/_custom_type_script = "uid://dcr552qofgphs"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -16.0
 offset_top = -8.0
 offset_right = 16.0
@@ -30,6 +33,7 @@ offset_bottom = 8.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_i7s67")
+texture = ExtResource("3_lflwf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_i7s67")

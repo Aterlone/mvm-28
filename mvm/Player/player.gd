@@ -67,10 +67,15 @@ func _physics_process(delta: float) -> void:
 	
 	$HitBox/MainCollider.disabled = !(joy_y == -1 and abilities["harden"])
 	print($HitBox.get_overlapping_areas().size())
+	var enemy_hit = false
 	if $HitBox.get_overlapping_areas().size() > 0:
 		for area in $HitBox.get_overlapping_areas():
 			if area.get_parent().name == "Slug":
 				area.get_parent().queue_free()
+				enemy_hit = true
+	if enemy_hit:
+		velocity.y = jump_height * delta
+				
 	
 	attack()
 	
