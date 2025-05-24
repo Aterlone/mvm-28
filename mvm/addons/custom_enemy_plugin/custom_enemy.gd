@@ -199,8 +199,8 @@ func run_physics():
 func hurt_player():
 	if HITBOX.get_overlapping_areas().size() > 0:
 		for area in HITBOX.get_overlapping_areas():
-			if area.get_parent().get_parent().name == "Player":
-				area.get_parent().get_parent().hurt(self, 1)
+			if area.get_parent().name == "Player":
+				area.get_parent().hurt(self, 1)
 
 
 func non_player_hurt(damage, node):
@@ -240,19 +240,19 @@ func hurt(damage, _knockback_coef):
 	timer_nodes["Flash"].start()
 	timer_nodes["Hurt"].start()
 	
-	if PLAYER.joy_y == 1:
-		knockback_vector.x = PLAYER.joy_x
-	else:
-		knockback_vector.x = PLAYER.x_direction
-	knockback_vector.y = -PLAYER.joy_y
-	knockback_vector.normalized()
+	#if PLAYER.joy_y == 1:
+		#knockback_vector.x = PLAYER.joy_x
+	#else:
+		#knockback_vector.x = PLAYER.x_direction
+	#knockback_vector.y = -PLAYER.joy_y
+	#knockback_vector.normalized()
+	#
+	#var knockback_force = PLAYER.knockback_coef * (6 - int(knockback_mass)) / 6 + 100
+	#
+	#knockback_vector.x *= knockback_force * get_physics_process_delta_time() * 60 
+	#knockback_vector.y *= knockback_force * get_physics_process_delta_time() * 60
 	
-	var knockback_force = PLAYER.knockback_coef * (6 - int(knockback_mass)) / 6 + 100
-	
-	knockback_vector.x *= knockback_force * get_physics_process_delta_time() * 60 
-	knockback_vector.y *= knockback_force * get_physics_process_delta_time() * 60
-	
-	velocity.y += knockback_vector.y 
+	#velocity.y += knockback_vector.y 
 	
 	# knockback = -direction * knockback * knockback_coef * delta
 	health -= damage  # subject to change for player damage upgrades.

@@ -65,6 +65,13 @@ func _physics_process(delta: float) -> void:
 	get_controls()
 	movement()
 	
+	$HitBox/MainCollider.disabled = !(joy_y == -1 and abilities["harden"])
+	print($HitBox.get_overlapping_areas().size())
+	if $HitBox.get_overlapping_areas().size() > 0:
+		for area in $HitBox.get_overlapping_areas():
+			if area.get_parent().name == "Slug":
+				area.get_parent().queue_free()
+	
 	attack()
 	
 	animate()
@@ -340,4 +347,9 @@ func _on_damage_detector_area_entered(area: Area2D) -> void:
 	else:
 		if safe_position != null:
 			global_position = safe_position
-	
+
+
+func hurt(enemy_node, damage):
+	return
+	if safe_position != null:
+		global_position = safe_position
