@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://cum3btvjnjqlj"]
+[gd_scene load_steps=4 format=4 uid="uid://cum3btvjnjqlj"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_3lmj4"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_3lmj4"]
+[ext_resource type="PackedScene" uid="uid://b140gvw8ehff" path="res://Enemies/slug.tscn" id="3_prys8"]
 
 [node name="Central10" type="Node2D"]
 
@@ -33,3 +34,8 @@ room_name = "central"
 room_number = 25
 direction = "down"
 room_char = "C"
+
+[node name="EnemyContainer" type="Node" parent="."]
+
+[node name="Slug" parent="EnemyContainer" instance=ExtResource("3_prys8")]
+position = Vector2(520, 320)

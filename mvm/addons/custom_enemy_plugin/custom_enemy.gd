@@ -113,7 +113,7 @@ func setup() -> void:
 	set_collision_mask_value(16, true)
 	add_to_group("Enemies")
 	MAIN = get_tree().get_root().get_child(0)
-	LEVEL = MAIN.get_node("AreaContainer").get_child(0)
+	LEVEL = MAIN.get_node("RoomContainer").get_child(0)
 	PLAYER = MAIN.get_node("Player")
 	
 	ENEMY_CONTAINER = get_parent()
@@ -305,11 +305,13 @@ func die():
 
 
 func detect_player():
+	pass
 	# area2d finds player given PLAYER_DETECTOR region
-	PLAYER_DETECTOR.scale.x = x_direction
-	if PLAYER_DETECTOR.get_overlapping_areas().size() > 0:
-		timer_nodes["Follow"].start()
-		x_direction = sign(PLAYER.global_position.x - PLAYER_DETECTOR.global_position.x)
+	
+	#PLAYER_DETECTOR.scale.x = x_direction
+	#if PLAYER_DETECTOR.get_overlapping_areas().size() > 0:
+		#timer_nodes["Follow"].start()
+		#x_direction = sign(PLAYER.global_position.x - PLAYER_DETECTOR.global_position.x)
 
 
 func setup_walk():

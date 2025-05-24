@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://blo2w3hielvpx"]
+
+[sub_resource type="Shader" id="811"]
+code = "shader_type canvas_item;
+
+uniform vec4 color : source_color;
+uniform float flashState : hint_range(0,1) = 0.5; 
+
+void fragment() {
+	vec4 pixelColor = texture(TEXTURE, UV);
+	COLOR = mix(pixelColor, color, flashState);
+	COLOR.a *= pixelColor.a;
+} "
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource("811")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/flashState = 0.5
