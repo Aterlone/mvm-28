@@ -11,7 +11,7 @@ size = Vector2(304, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85g7k"]
 size = Vector2(64, 48)
 
-[node name="Central10" type="Node2D"]
+[node name="Central11" type="Node2D"]
 
 [node name="WarpZones" type="Node" parent="."]
 
