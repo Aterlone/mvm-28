@@ -355,6 +355,5 @@ func _on_damage_detector_area_entered(area: Area2D) -> void:
 
 
 func hurt(enemy_node, damage):
-	return
 	if safe_position != null:
 		global_position = safe_position

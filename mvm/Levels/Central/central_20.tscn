@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=4 uid="uid://cum3btvjnjqlj"]
+[gd_scene load_steps=6 format=4 uid="uid://cum3btvjnjqlj"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_3lmj4"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_3lmj4"]
 [ext_resource type="PackedScene" uid="uid://b140gvw8ehff" path="res://Enemies/slug.tscn" id="3_prys8"]
+[ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="4_qg2gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg2gm"]
+size = Vector2(48, 48)
 
 [node name="Central11" type="Node2D"]
 
@@ -39,3 +43,18 @@ room_char = "C"
 
 [node name="Slug" parent="EnemyContainer" instance=ExtResource("3_prys8")]
 position = Vector2(520, 320)
+
+[node name="DangerReturnArea" parent="." instance=ExtResource("4_qg2gm")]
+position = Vector2(416, 280)
+
+[node name="CollisionShape2D" parent="DangerReturnArea" index="0"]
+shape = SubResource("RectangleShape2D_qg2gm")
+
+[node name="DangerReturnArea2" parent="." instance=ExtResource("4_qg2gm")]
+position = Vector2(616, 264)
+
+[node name="CollisionShape2D" parent="DangerReturnArea2" index="0"]
+shape = SubResource("RectangleShape2D_qg2gm")
+
+[editable path="DangerReturnArea"]
+[editable path="DangerReturnArea2"]
