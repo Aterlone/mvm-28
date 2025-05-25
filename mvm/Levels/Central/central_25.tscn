@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="4_87w6u"]
 [ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="5_sf4tc"]
 [ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="6_xtpva"]
-[ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="7_sf4tc"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/back_ground.tscn" id="7_sf4tc"]
 
 [node name="Central25" type="Node2D"]
 
