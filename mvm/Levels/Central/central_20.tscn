@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://cum3btvjnjqlj"]
+[gd_scene load_steps=9 format=4 uid="uid://cum3btvjnjqlj"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_3lmj4"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_3lmj4"]
 [ext_resource type="PackedScene" uid="uid://b140gvw8ehff" path="res://Enemies/slug.tscn" id="3_prys8"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="4_qg2gm"]
+[ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="5_gv8w4"]
+[ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="6_jrcxx"]
+[ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="7_kdre4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg2gm"]
 size = Vector2(48, 48)
@@ -56,6 +59,356 @@ position = Vector2(616, 264)
 
 [node name="CollisionShape2D" parent="DangerReturnArea2" index="0"]
 shape = SubResource("RectangleShape2D_qg2gm")
+
+[node name="WallDetail" type="Node2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-64, 112)
+
+[node name="Grass2Dark11" type="Sprite2D" parent="WallDetail"]
+position = Vector2(1120, 224)
+rotation = 6.28318
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 464, 256)
+
+[node name="Grass2Dark3" type="Sprite2D" parent="WallDetail"]
+position = Vector2(202, 144)
+rotation = -3.14159
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 232, 256)
+
+[node name="Grass2Dark6" type="Sprite2D" parent="WallDetail"]
+position = Vector2(-11, 145)
+rotation = -3.14159
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 232, 256)
+
+[node name="Grass2Dark12" type="Sprite2D" parent="WallDetail"]
+position = Vector2(371, 195)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 256)
+
+[node name="Grass2Dark5" type="Sprite2D" parent="WallDetail"]
+position = Vector2(888, 45)
+rotation = -9.42476
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 232, 256)
+
+[node name="Grass2Dark7" type="Sprite2D" parent="WallDetail"]
+position = Vector2(113, 220)
+rotation = -6.28318
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 232, 256)
+
+[node name="Grass2Dark4" type="Sprite2D" parent="WallDetail"]
+position = Vector2(574, 225)
+rotation = -6.28318
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark13" type="Sprite2D" parent="WallDetail"]
+position = Vector2(595, 225)
+rotation = -6.28318
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark8" type="Sprite2D" parent="WallDetail"]
+position = Vector2(1010, 60)
+rotation = -2.35619
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark26" type="Sprite2D" parent="WallDetail"]
+z_index = 1
+position = Vector2(844, -38)
+rotation = -2.35619
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark24" type="Sprite2D" parent="WallDetail"]
+position = Vector2(435, -16)
+rotation = -3.66519
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark21" type="Sprite2D" parent="WallDetail"]
+position = Vector2(447, 148)
+rotation = -3.40339
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark22" type="Sprite2D" parent="WallDetail"]
+position = Vector2(442, 89)
+rotation = -5.49778
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 80, 256)
+
+[node name="Grass2Dark23" type="Sprite2D" parent="WallDetail"]
+position = Vector2(417, 29)
+rotation = -4.71238
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 80, 256)
+
+[node name="Grass2Dark16" type="Sprite2D" parent="WallDetail"]
+position = Vector2(1026, 105)
+rotation = -1.57079
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="Grass2Dark9" type="Sprite2D" parent="WallDetail"]
+position = Vector2(1093, 140)
+rotation = -3.14159
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 104, 256)
+
+[node name="Grass2Dark20" type="Sprite2D" parent="WallDetail"]
+position = Vector2(378, 157)
+rotation = -3.14159
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 104, 256)
+
+[node name="Grass2Dark10" type="Sprite2D" parent="WallDetail"]
+position = Vector2(804, 3)
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 104, 256)
+
+[node name="GrassCornerOuter" type="Sprite2D" parent="WallDetail"]
+position = Vector2(891, 166)
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCorner2" type="Sprite2D" parent="WallDetail"]
+position = Vector2(664, 236)
+rotation = -1.57079
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 80, 96)
+
+[node name="GrassCorner3" type="Sprite2D" parent="WallDetail"]
+position = Vector2(228, 237)
+rotation = -1.57079
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 72, 96)
+
+[node name="GrassCorner7" type="Sprite2D" parent="WallDetail"]
+position = Vector2(867, 232)
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 80, 96)
+
+[node name="GrassCorner8" type="Sprite2D" parent="WallDetail"]
+position = Vector2(655, -63)
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 80, 96)
+
+[node name="GrassCorner10" type="Sprite2D" parent="WallDetail"]
+position = Vector2(868, 16)
+rotation = -1.57079
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 80, 96)
+
+[node name="GrassCorner11" type="Sprite2D" parent="WallDetail"]
+position = Vector2(839, -90)
+rotation = -3.14159
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 80, 96)
+
+[node name="GrassCornerOuter2" type="Sprite2D" parent="WallDetail"]
+position = Vector2(648, 165)
+rotation = -1.57079
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter5" type="Sprite2D" parent="WallDetail"]
+position = Vector2(740, -10)
+rotation = -1.57079
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter17" type="Sprite2D" parent="WallDetail"]
+position = Vector2(791, -81)
+rotation = -3.14159
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter15" type="Sprite2D" parent="WallDetail"]
+position = Vector2(710, -74)
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter16" type="Sprite2D" parent="WallDetail"]
+position = Vector2(704, -19)
+rotation = 1.57079
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter6" type="Sprite2D" parent="WallDetail"]
+position = Vector2(739, 52)
+rotation = -3.14159
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter12" type="Sprite2D" parent="WallDetail"]
+position = Vector2(1014, 148)
+rotation = -3.14159
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="Grass2Dark14" type="Sprite2D" parent="WallDetail"]
+position = Vector2(592, 31)
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 256)
+
+[node name="Grass2Dark25" type="Sprite2D" parent="WallDetail"]
+position = Vector2(564, -30)
+rotation = 3.14159
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 216, 256)
+
+[node name="Grass2Dark19" type="Sprite2D" parent="WallDetail"]
+position = Vector2(560, 112)
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 256)
+
+[node name="Grass2Dark15" type="Sprite2D" parent="WallDetail"]
+position = Vector2(588, 66)
+rotation = -3.14159
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 256)
+
+[node name="Grass2Dark18" type="Sprite2D" parent="WallDetail"]
+position = Vector2(558, 149)
+rotation = -3.14159
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 256)
+
+[node name="Grass2Dark17" type="Sprite2D" parent="WallDetail"]
+position = Vector2(772, 174)
+scale = Vector2(1.00663, 1)
+texture = ExtResource("5_gv8w4")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 256)
+
+[node name="GrassCornerOuter8" type="Sprite2D" parent="WallDetail"]
+position = Vector2(470, 19)
+rotation = -1.57079
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter9" type="Sprite2D" parent="WallDetail"]
+position = Vector2(469, 73)
+rotation = -3.14159
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter10" type="Sprite2D" parent="WallDetail"]
+position = Vector2(711, 23)
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter11" type="Sprite2D" parent="WallDetail"]
+position = Vector2(705, 79)
+rotation = -4.71238
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter13" type="Sprite2D" parent="WallDetail"]
+position = Vector2(683, 101)
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter14" type="Sprite2D" parent="WallDetail"]
+position = Vector2(677, 157)
+rotation = -4.71238
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter3" type="Sprite2D" parent="WallDetail"]
+position = Vector2(215, 183)
+rotation = 4.71238
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCorner9" type="Sprite2D" parent="WallDetail"]
+position = Vector2(501, 237)
+rotation = -1.57079
+scale = Vector2(1, -1)
+texture = ExtResource("7_kdre4")
+region_enabled = true
+region_rect = Rect2(0, 32, 72, 96)
+
+[node name="GrassCornerOuter7" type="Sprite2D" parent="WallDetail"]
+position = Vector2(519, 183)
+rotation = 6.28318
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
+
+[node name="GrassCornerOuter4" type="Sprite2D" parent="WallDetail"]
+position = Vector2(305, 170)
+rotation = 2.87979
+texture = ExtResource("6_jrcxx")
+region_enabled = true
+region_rect = Rect2(56, 0, 72, 64)
 
 [editable path="DangerReturnArea"]
 [editable path="DangerReturnArea2"]
