@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c7xlnw6oegwrc"]
+[gd_scene load_steps=8 format=4 uid="uid://c7xlnw6oegwrc"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_gbxtc"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_7sj3s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="4_87w6u"]
 [ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="5_sf4tc"]
 [ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="6_xtpva"]
+[ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="7_sf4tc"]
 
 [node name="Central25" type="Node2D"]
 
@@ -523,3 +524,5 @@ rotation = 6.28318
 texture = ExtResource("5_sf4tc")
 region_enabled = true
 region_rect = Rect2(56, 0, 72, 64)
+
+[node name="BackGround" parent="." instance=ExtResource("7_sf4tc")]
