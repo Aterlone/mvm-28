@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" uid="uid://banvga4yxaxeo" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dvdks2bkf3f34" path="res://Player/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://b2xtyv83rcjtu" path="res://Levels/Central/central_10.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dahqt1ry8crg4" path="res://Levels/Central/central_80.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1bvp3")
 
 [node name="RoomContainer" type="Node2D" parent="."]
 
-[node name="Central12" parent="RoomContainer" instance=ExtResource("2_h2yge")]
+[node name="Central80" parent="RoomContainer" instance=ExtResource("2_h2yge")]
+position = Vector2(8, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(168, 160)
+position = Vector2(3333, -184)
 jump_height = -17500
 run_accel = 1000
