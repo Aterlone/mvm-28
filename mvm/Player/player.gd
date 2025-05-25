@@ -138,15 +138,15 @@ func get_controls():
 		abilities["swim"] = true
 	else:
 		abilities["swim"] = false
-		if Input.is_key_pressed(KEY_SPACE):
-			abilities["bubble"] = true
-		else:
-			abilities["bubble"] = false
+	if Input.is_key_pressed(KEY_SPACE):
+		abilities["bubble"] = true
+	else:
+		abilities["bubble"] = false
 
-		if Input.is_key_pressed(KEY_DOWN):
-			abilities["harden"] = true
-		else:
-			abilities["harden"] = false
+	if Input.is_key_pressed(KEY_DOWN):
+		abilities["harden"] = true
+	else:
+		abilities["harden"] = false
 	
 	
 	if Input.get_action_strength("jump") > 0:
@@ -357,3 +357,8 @@ func _on_damage_detector_area_entered(area: Area2D) -> void:
 func hurt(enemy_node, damage):
 	if safe_position != null:
 		global_position = safe_position
+
+
+func update_powerups(powerup_type):
+	if powerup_type in abilities.keys():
+		abilities[powerup_type] = true
