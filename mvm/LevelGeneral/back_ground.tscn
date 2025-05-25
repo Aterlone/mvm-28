@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsocgu0gibcp6"]
+
+[ext_resource type="Texture2D" uid="uid://drwrydtjse8fc" path="res://Art/Central/GrassBackgroun.png" id="1_jctuc"]
+
+[node name="BackGround" type="CanvasLayer"]
+layer = -128
+follow_viewport_enabled = true
+follow_viewport_scale = 0.7
+
+[node name="GrassBackgroun" type="Sprite2D" parent="."]
+modulate = Color(0.262932, 0.262932, 0.262932, 1)
+texture_repeat = 2
+texture = ExtResource("1_jctuc")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://by2j4sdpsy4at"]
+[gd_scene load_steps=11 format=4 uid="uid://by2j4sdpsy4at"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_7bmkf"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_opta5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="5_vys6f"]
 [ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="6_4yami"]
 [ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="7_r8i7q"]
+[ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="8_4yami"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql7m5"]
 size = Vector2(48, 48)
@@ -686,6 +687,8 @@ rotation = 6.28318
 texture = ExtResource("6_4yami")
 region_enabled = true
 region_rect = Rect2(56, 0, 72, 64)
+
+[node name="BackGround" parent="." instance=ExtResource("8_4yami")]
 
 [editable path="DangerReturnArea"]
 [editable path="DangerReturnArea2"]
