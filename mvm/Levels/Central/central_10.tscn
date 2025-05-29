@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://b2xtyv83rcjtu"]
 
-[ext_resource type="PackedScene" path="res://LevelGeneral/back_ground.tscn" id="1_ftfp2"]
+[ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="1_ftfp2"]
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_s2pfo"]
 [ext_resource type="PackedScene" uid="uid://biyuwindes0o5" path="res://LevelGeneral/danger_area.tscn" id="3_3bcvm"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="3_b1ti1"]

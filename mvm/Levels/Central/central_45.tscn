@@ -975,7 +975,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 152, 256)
 
 [node name="Grass2Dark95" type="Sprite2D" parent="WallDetail"]
-position = Vector2(672, -1184)
+position = Vector2(672, -1192)
 rotation = 4.71239
 texture = ExtResource("4_tw7p0")
 region_enabled = true
