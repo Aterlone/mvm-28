@@ -34,7 +34,7 @@ var current_animation = ""
 
 var abilities = {
 	"harden" : false,
-	"bubble" : false,
+	"bubble" : true,
 	"swim" : false
 }
 
