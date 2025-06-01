@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvdks2bkf3f34"]
+[gd_scene load_steps=14 format=3 uid="uid://dvdks2bkf3f34"]
 
 [ext_resource type="Texture2D" uid="uid://527bk10nkcgd" path="res://Player/PlayerAssets/player_sprite_sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cn8gax1syxxjh" path="res://Player/player.gd" id="1_onrkg"]
@@ -13,6 +13,125 @@ radius = 7.0
 radius = 6.0
 height = 14.0
 
+[sub_resource type="Animation" id="Animation_4ntmi"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_btcbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gwnis"]
+resource_name = "Run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_k53q1"]
+resource_name = "Harden"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_fhl08"]
+resource_name = "Bubble"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_vtle1"]
+resource_name = "Jump"
+length = 20.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_od3ui"]
+resource_name = "Fall"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtle1"]
+_data = {
+&"Bubble": SubResource("Animation_fhl08"),
+&"Fall": SubResource("Animation_od3ui"),
+&"Harden": SubResource("Animation_k53q1"),
+&"Idle": SubResource("Animation_4ntmi"),
+&"Jump": SubResource("Animation_vtle1"),
+&"RESET": SubResource("Animation_btcbx"),
+&"Run": SubResource("Animation_gwnis")
+}
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 0
@@ -24,8 +143,10 @@ position_smoothing_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4flbx")
 hframes = 4
+vframes = 4
 
 [node name="MainCollider" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_onrkg")
 
@@ -37,6 +158,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="WaterDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 32
 
@@ -45,6 +167,7 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_4ntmi")
 
 [node name="ExitWaterDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 32
 
@@ -54,6 +177,7 @@ rotation = 1.57079
 shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="WarpDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -62,6 +186,7 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_4ntmi")
 
 [node name="DamageDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 512
 collision_mask = 192
 
@@ -73,12 +198,18 @@ shape = SubResource("CircleShape2D_4ntmi")
 one_shot = true
 
 [node name="HitBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 256
 collision_mask = 2048
 
 [node name="MainCollider" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vtle1")
+}
 
 [connection signal="area_entered" from="WarpDetector" to="." method="_on_warp_detector_area_entered"]
 [connection signal="area_entered" from="DamageDetector" to="." method="_on_damage_detector_area_entered"]

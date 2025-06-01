@@ -97,31 +97,30 @@ func animate():
 	if (joy_x != 0):
 		$Sprite2D.scale.x = sign(joy_x)
 	current_animation = ""
-	if joy_y == -1:
-		$Sprite2D.frame = 1
+	if joy_y == -1 and abilities["harden"]:
+		$AnimationPlayer.play("Harden")
 		if is_on_floor():
 			$Sprite2D.rotation_degrees += velocity.x * 0.05
 		else:
 			$Sprite2D.rotation_degrees += velocity.x * 0.02
 		return
 	
-	$Sprite2D.frame = 0
 	$Sprite2D.rotation_degrees = 0
 	
-	if joy_y == 1 and velocity.y > 0:
-		$Sprite2D.frame = 2
+	if joy_y == 1 and velocity.y > 0 and abilities["bubble"]:
+		$AnimationPlayer.play("Bubble")
 		return
 	
 	if is_on_floor():
 		if is_zero_approx(velocity.x):
-			current_animation = "idle"
+			$AnimationPlayer.play("Idle")
 		else:
-			current_animation = "walk"
+			$AnimationPlayer.play("Run")
 	else:
 		if velocity.y > 0:
-			current_animation = "jump"
+			$AnimationPlayer.play("Fall")
 		else:
-			current_animation = "fall"
+			$AnimationPlayer.play("Jump")
 	
 	
 	

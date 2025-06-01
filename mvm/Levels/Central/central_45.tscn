@@ -997,7 +997,6 @@ region_rect = Rect2(0, 0, 488, 256)
 [node name="Grass2Dark20" type="Sprite2D" parent="WallDetail"]
 position = Vector2(296, -1520)
 rotation = -3.48145
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 376, 256)
@@ -1005,7 +1004,6 @@ region_rect = Rect2(0, 0, 376, 256)
 [node name="Grass2Dark83" type="Sprite2D" parent="WallDetail"]
 position = Vector2(648, -1616)
 rotation = -3.14159
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 376, 256)
@@ -1341,7 +1339,6 @@ region_rect = Rect2(0, 0, 64, 256)
 [node name="Grass2Dark40" type="Sprite2D" parent="WallDetail/Grass2Dark53/Grass2Dark40"]
 position = Vector2(-40, 24)
 rotation = -2.3562
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
@@ -1383,7 +1380,6 @@ region_rect = Rect2(0, 0, 64, 256)
 [node name="Grass2Dark40" type="Sprite2D" parent="WallDetail/Grass2Dark54/Grass2Dark40"]
 position = Vector2(-40, 24)
 rotation = -2.3562
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
@@ -1410,7 +1406,6 @@ region_rect = Rect2(-8, 112, 168, 48)
 [node name="Grass2Dark40" type="Sprite2D" parent="WallDetail/Grass2Dark43"]
 position = Vector2(-64, 32)
 rotation = -2.61799
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
@@ -1465,7 +1460,6 @@ region_rect = Rect2(-8, 112, 168, 48)
 [node name="Grass2Dark40" type="Sprite2D" parent="WallDetail/Grass2Dark55"]
 position = Vector2(-64, 32)
 rotation = -2.61799
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
@@ -1520,7 +1514,6 @@ region_rect = Rect2(-8, 112, 168, 48)
 [node name="Grass2Dark40" type="Sprite2D" parent="WallDetail/Grass2Dark56"]
 position = Vector2(-64, 32)
 rotation = -2.61799
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
@@ -1575,7 +1568,6 @@ region_rect = Rect2(-8, 112, 168, 48)
 [node name="Grass2Dark40" type="Sprite2D" parent="WallDetail/Grass2Dark57"]
 position = Vector2(-64, 32)
 rotation = -2.61799
-scale = Vector2(1, 1)
 texture = ExtResource("4_tw7p0")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
