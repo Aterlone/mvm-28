@@ -117,7 +117,7 @@ func animate():
 		else:
 			$AnimationPlayer.play("Run")
 	else:
-		if velocity.y > 0:
+		if velocity.y > 300:
 			$AnimationPlayer.play("Fall")
 		else:
 			$AnimationPlayer.play("Jump")
