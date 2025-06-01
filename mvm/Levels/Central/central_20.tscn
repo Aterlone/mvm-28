@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ju7jt8h7o533" path="res://Art/Central/Grass2Dark.png" id="5_gv8w4"]
 [ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="6_jrcxx"]
 [ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="7_kdre4"]
-[ext_resource type="PackedScene" path="res://LevelGeneral/back_ground.tscn" id="8_jrcxx"]
+[ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="8_jrcxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg2gm"]
 size = Vector2(48, 48)
