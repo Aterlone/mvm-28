@@ -154,7 +154,7 @@ shape = SubResource("RectangleShape2D_onrkg")
 one_shot = true
 
 [node name="CoyoteT" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 
 [node name="WaterDetector" type="Area2D" parent="."]

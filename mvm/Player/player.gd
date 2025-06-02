@@ -201,8 +201,11 @@ func movement_y():
 	
 	setup_movement_y()
 	
+	if is_on_floor():
+		$CoyoteT.start()
+	
 	# jump setup
-	var can_jump = !jumping 
+	var can_jump = !jumping and !$CoyoteT.is_stopped()
 	
 	# jump clause
 	if button_jump == 1 and can_jump:
