@@ -45,19 +45,21 @@ func _process(delta: float) -> void:
 	
 	detect_player()
 	
+	if timer_nodes["AttackDelay"].is_stopped():  # only attack after delay
+		init_attack()
+		#return
 	
-	if !state_hurt:
-		if timer_nodes["Follow"].time_left == 0: 
-			# enemy is idle when player cannot be found
-			idle()
-		else: 
-			# enemy follows and attacks when player is found
-			follow()
-			if timer_nodes["AttackDelay"].is_stopped():  # only attack after delay
-				init_attack()
-				return
-	else:
-		velocity.x = 0
+	
+	#if !state_hurt:
+		#if timer_nodes["Follow"].time_left == 0: 
+			## enemy is idle when player cannot be found
+			#idle()
+		#else: 
+			## enemy follows and attacks when player is found
+			#follow()
+			#
+	#else:
+		#velocity.x = 0
 	
 	# -------------------------- PHYSICS
 	
@@ -102,4 +104,23 @@ func init_attack():
 		## winding up
 	#else:
 		## attacking
-extends "res://addons/custom_enemy_plugin/custom_enemy.gd"
+
+
+func on_AttackDelayT_end():  # length of pause between attacks
+	pass
+
+
+func on_AttackDurationT_end():  # length of attack anim.
+	state_attack = false
+	timer_nodes["AttackDelay"].wait_time = randf_range(1.6,2.3)
+	timer_nodes["AttackDelay"].start()
+
+
+func on_AttackWindUpT_end():  # length of attack wind up / telegraph
+	# movement of attack goes here:
+	ENEMY_CONTAINER.add_child(load("res://Enemies/acorn.tscn").instantiate())
+	var acorn = ENEMY_CONTAINER.get_child(ENEMY_CONTAINER.get_child_count() - 1)
+	acorn.global_position = global_position
+	acorn.velocity.x *= sign(scale.x)
+	
+	pass

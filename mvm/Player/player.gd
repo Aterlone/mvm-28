@@ -364,3 +364,11 @@ func hurt(enemy_node, damage):
 func update_powerups(powerup_type):
 	if powerup_type in abilities.keys():
 		abilities[powerup_type] = true
+
+
+func _on_damage_detector_body_entered(area: Node2D) -> void:
+	if area.is_in_group("DangerReturn"):
+		safe_position = area.get_child(0).global_position + 0.5 * Vector2(0,area.get_child(0).shape.size.y - $MainCollider.shape.size.y)
+	else:
+		if safe_position != null:
+			global_position = safe_position

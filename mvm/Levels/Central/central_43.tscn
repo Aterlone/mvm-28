@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=4 uid="uid://dbtvii47ffgki"]
+[gd_scene load_steps=7 format=4 uid="uid://bymeoqllfqp0o"]
 
+[ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="1_3gsmr"]
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_i2uvc"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_cqhij"]
+[ext_resource type="PackedScene" uid="uid://cicfde2awvhjy" path="res://Enemies/squirrel.tscn" id="3_cqhij"]
+[ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="5_2xy1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xy1r"]
+size = Vector2(42, 48)
 
 [node name="Central43" type="Node2D"]
+
+[node name="DangerReturnArea" parent="." instance=ExtResource("1_3gsmr")]
+position = Vector2(712, -400)
+
+[node name="CollisionShape2D" parent="DangerReturnArea" index="0"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_2xy1r")
 
 [node name="DangerZones" type="Node" parent="."]
 
@@ -30,3 +43,12 @@ direction = "left"
 room_char = "A"
 
 [node name="EnemyContainer" type="Node" parent="."]
+
+[node name="squirrel" parent="EnemyContainer" instance=ExtResource("3_cqhij")]
+position = Vector2(776, -392)
+
+[node name="Spikes" parent="." instance=ExtResource("5_2xy1r")]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAA1AOf/AAAAAAAAAAA1AOj/AAAAAAAAAAA1AOn/AAAAAAAAAAA2AOf/AAAAAAAAAAA2AOj/AAAAAAAAAAA2AOn/AAAAAAAAAAA3AOf/AAAAAAAAAAA3AOj/AAAAAAAAAAA3AOn/AAAAAAAAAAA4AOf/AAAAAAAAAAA4AOj/AAAAAAAAAAA4AOn/AAAAAAAAAAA5AOf/AAAAAAAAAAA5AOj/AAAAAAAAAAA5AOn/AAAAAAAAAAA=")
+
+[editable path="DangerReturnArea"]

@@ -20,6 +20,8 @@ size = Vector2(16, 16)
 
 [node name="squirrel" type="CharacterBody2D"]
 texture_filter = 1
+position = Vector2(7, 0)
+collision_layer = 0
 script = ExtResource("1_ydt2r")
 metadata/_custom_type_script = "uid://dcr552qofgphs"
 

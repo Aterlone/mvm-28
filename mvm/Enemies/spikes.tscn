@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2mr14gxv51ft"]
+
+[ext_resource type="Texture2D" uid="uid://ck6tuww4iysyf" path="res://Enemies/thorns.png" id="1_rtc0v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1qbs"]
+texture = ExtResource("1_rtc0v")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.23746, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_qa1n1"]
+physics_layer_0/collision_layer = 192
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_c1qbs")
+
+[node name="Spikes" type="TileMapLayer"]
+texture_filter = 1
+tile_set = SubResource("TileSet_qa1n1")

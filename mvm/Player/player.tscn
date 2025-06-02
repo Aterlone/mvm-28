@@ -213,3 +213,4 @@ libraries = {
 
 [connection signal="area_entered" from="WarpDetector" to="." method="_on_warp_detector_area_entered"]
 [connection signal="area_entered" from="DamageDetector" to="." method="_on_damage_detector_area_entered"]
+[connection signal="body_entered" from="DamageDetector" to="." method="_on_damage_detector_body_entered"]
