@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccvuus7jnqpqa"]
+[gd_scene load_steps=4 format=3 uid="uid://cwwvw4qucxa44"]
 
 [ext_resource type="Script" uid="uid://banvga4yxaxeo" path="res://main.gd" id="1_0si48"]
-[ext_resource type="PackedScene" uid="uid://worqockogdkc" path="res://Levels/Central/central_45.tscn" id="2_mksng"]
+[ext_resource type="PackedScene" uid="uid://dbtvii47ffgki" path="res://Levels/Central/central_43.tscn" id="2_evbxg"]
 [ext_resource type="PackedScene" uid="uid://dvdks2bkf3f34" path="res://Player/player.tscn" id="3_tpsh3"]
 
 [node name="Main" type="Node2D"]
@@ -9,9 +9,9 @@ script = ExtResource("1_0si48")
 
 [node name="RoomContainer" type="Node2D" parent="."]
 
-[node name="Central45" parent="RoomContainer" instance=ExtResource("2_mksng")]
+[node name="Central43" parent="RoomContainer" instance=ExtResource("2_evbxg")]
 
 [node name="Player" parent="." instance=ExtResource("3_tpsh3")]
-position = Vector2(152, -1408)
+position = Vector2(598, -392)
 jump_height = -17500
 run_accel = 1000

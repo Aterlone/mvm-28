@@ -15,7 +15,7 @@ tile_map_data = PackedByteArray("AAD6APX/AAAAAAAAAAD6AOT/AAAAAAAAAAD6AOX/AAAAAAA
 position = Vector2(4010, 1572)
 scale = Vector2(1, 5)
 room_name = "central"
-room_number = 90
+room_number = 80
 direction = "right"
 room_char = "M"
 

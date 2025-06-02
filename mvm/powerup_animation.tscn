@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc2povqd4bk3v"]
+[gd_scene load_steps=9 format=3 uid="uid://br84bjp6436f1"]
 
 [ext_resource type="Texture2D" uid="uid://3he71a7a3vdy" path="res://Player/PlayerAssets/player_powerup.png" id="1_44ouw"]
 [ext_resource type="Texture2D" uid="uid://cmt42qnr2ym3t" path="res://Player/PlayerAssets/Gem.png" id="2_ft8we"]
