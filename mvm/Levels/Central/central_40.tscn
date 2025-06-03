@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4lfofogoi7bk"]
+[gd_scene load_steps=9 format=4 uid="uid://c4lfofogoi7bk"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_qfu27"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_wp7td"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c3hw10ugbfu0k" path="res://Art/Central/GrassCornerOuter.png" id="5_5m3tt"]
 [ext_resource type="Texture2D" uid="uid://c5k5lcjq34f47" path="res://Art/Central/GrassCorner.png" id="6_u3ex0"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="7_5m3tt"]
+[ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="8_u3ex0"]
 
 [node name="Central40" type="Node2D"]
 
@@ -852,3 +853,7 @@ position = Vector2(204, 230)
 texture = ExtResource("5_5m3tt")
 
 [node name="BackGround" parent="." instance=ExtResource("7_5m3tt")]
+
+[node name="Spikes" parent="." instance=ExtResource("8_u3ex0")]
+position = Vector2(4, -1)
+tile_map_data = PackedByteArray("AAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAApAAIAAAAAAAAAAAA=")
