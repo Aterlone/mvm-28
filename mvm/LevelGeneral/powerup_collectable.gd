@@ -5,15 +5,19 @@ extends Area2D
 @export_enum (
 	"harden",
 	"bubble",
-	"swim"
+	"swim",
+	"key1",
+	"key2",
+	"key3"
 ) var powerup_type : String
-
 
 var colors = {
 	"harden" : Color.RED,
 	"bubble" : Color.BLUE,
-	"swim" : Color.GREEN
-	
+	"swim" : Color.GREEN,
+	"key1" : Color.RED,
+	"key2" : Color.BLUE,
+	"key3" : Color.GREEN
 }
 
 

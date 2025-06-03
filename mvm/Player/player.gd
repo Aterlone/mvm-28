@@ -35,7 +35,10 @@ var current_animation = ""
 var abilities = {
 	"harden" : false,
 	"bubble" : true,
-	"swim" : false
+	"swim" : false,
+	"key1" : false,
+	"key2" : false,
+	"key3" : false
 }
 
 var safe_position = null

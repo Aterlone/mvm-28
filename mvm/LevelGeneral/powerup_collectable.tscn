@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://03mymptdvukl" path="res://LevelGeneral/powerup_collectable.gd" id="1_m0owf"]
 [ext_resource type="Texture2D" uid="uid://cmt42qnr2ym3t" path="res://Player/PlayerAssets/Gem.png" id="2_tt8nl"]
-[ext_resource type="PackedScene" uid="uid://dc2povqd4bk3v" path="res://powerup_animation.tscn" id="3_6y4xg"]
+[ext_resource type="PackedScene" uid="uid://br84bjp6436f1" path="res://powerup_animation.tscn" id="3_6y4xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb0of"]
 size = Vector2(16, 16)
