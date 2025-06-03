@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ufppmqyoaslh"]
+
+[ext_resource type="Script" uid="uid://dih7bg3ltoydv" path="res://title_screen.gd" id="1_v6p8y"]
+
+[sub_resource type="Theme" id="Theme_v6p8y"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 262.0
+offset_top = 105.0
+offset_right = 402.0
+offset_bottom = 151.0
+theme = SubResource("Theme_v6p8y")
+text = "Start"
+script = ExtResource("1_v6p8y")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
