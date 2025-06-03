@@ -1,0 +1,60 @@
+[gd_scene load_steps=15 format=3 uid="uid://bos3rapiacltx"]
+
+[ext_resource type="PackedScene" uid="uid://b2xtyv83rcjtu" path="res://Levels/Central/central_10.tscn" id="1_eg11u"]
+[ext_resource type="PackedScene" uid="uid://cum3btvjnjqlj" path="res://Levels/Central/central_20.tscn" id="2_pqyw2"]
+[ext_resource type="PackedScene" uid="uid://c7xlnw6oegwrc" path="res://Levels/Central/central_25.tscn" id="3_geyou"]
+[ext_resource type="PackedScene" uid="uid://by2j4sdpsy4at" path="res://Levels/Central/central_30.tscn" id="4_0pmmw"]
+[ext_resource type="PackedScene" uid="uid://c4lfofogoi7bk" path="res://Levels/Central/central_40.tscn" id="5_m6isp"]
+[ext_resource type="PackedScene" uid="uid://ckk004u1qo71v" path="res://Levels/Central/central_42.tscn" id="6_x5jb1"]
+[ext_resource type="PackedScene" uid="uid://bymeoqllfqp0o" path="res://Levels/Central/central_43.tscn" id="7_4su7n"]
+[ext_resource type="PackedScene" uid="uid://worqockogdkc" path="res://Levels/Central/central_45.tscn" id="8_55vs4"]
+[ext_resource type="PackedScene" uid="uid://cxeh1yu2cm1bq" path="res://Levels/Central/central_50.tscn" id="9_cxvgd"]
+[ext_resource type="PackedScene" uid="uid://cgpqr8tmpdirl" path="res://Levels/Central/central_55.tscn" id="10_cpdi7"]
+[ext_resource type="PackedScene" uid="uid://cr8wjn0f65ojw" path="res://Levels/Central/central_60.tscn" id="11_w1r0r"]
+[ext_resource type="PackedScene" uid="uid://dahqt1ry8crg4" path="res://Levels/Central/central_80.tscn" id="12_gv6r3"]
+[ext_resource type="PackedScene" uid="uid://3322uqjxxgsw" path="res://Levels/Central/central_85.tscn" id="13_acsnt"]
+[ext_resource type="PackedScene" uid="uid://bgid63s15cv5p" path="res://Levels/Central/central_90.tscn" id="14_1xsyg"]
+
+[node name="LevelComposite" type="Node2D"]
+
+[node name="Central12" parent="." instance=ExtResource("1_eg11u")]
+position = Vector2(-2027, -1032)
+
+[node name="Central11" parent="." instance=ExtResource("2_pqyw2")]
+position = Vector2(-951, -1033)
+
+[node name="Central25" parent="." instance=ExtResource("3_geyou")]
+position = Vector2(-643, -1269)
+
+[node name="Central30" parent="." instance=ExtResource("4_0pmmw")]
+position = Vector2(122, -1009)
+
+[node name="Central40" parent="." instance=ExtResource("5_m6isp")]
+position = Vector2(963, -1279)
+
+[node name="Central42" parent="." instance=ExtResource("6_x5jb1")]
+position = Vector2(-2735, -3689)
+
+[node name="Central43" parent="." instance=ExtResource("7_4su7n")]
+position = Vector2(-538, -1976)
+
+[node name="Central45" parent="." instance=ExtResource("8_55vs4")]
+position = Vector2(1669, -1612)
+
+[node name="Central50" parent="." instance=ExtResource("9_cxvgd")]
+position = Vector2(2487, -1673)
+
+[node name="Central55" parent="." instance=ExtResource("10_cpdi7")]
+position = Vector2(2491, -2887)
+
+[node name="Central60" parent="." instance=ExtResource("11_w1r0r")]
+position = Vector2(4089, -2423)
+
+[node name="Central80" parent="." instance=ExtResource("12_gv6r3")]
+position = Vector2(2533, -2888)
+
+[node name="Central90" parent="." instance=ExtResource("13_acsnt")]
+position = Vector2(1278, -3974)
+
+[node name="Central91" parent="." instance=ExtResource("14_1xsyg")]
+position = Vector2(2556, -3170)

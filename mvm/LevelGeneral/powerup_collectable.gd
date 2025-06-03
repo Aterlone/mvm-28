@@ -22,6 +22,8 @@ var colors = {
 
 
 func _physics_process(delta: float) -> void:
+	if powerup_type == null:
+		return
 	$Gem.modulate = colors[powerup_type]
 	$PowerupAnimation/Gem.modulate = colors[powerup_type]
 
