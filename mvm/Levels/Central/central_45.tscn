@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_jqp6m"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_reebj"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="3_37tal"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="3_37tal"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="6_tw7p0"]
 
 [node name="Central45" type="Node2D"]
@@ -41,9 +41,9 @@ room_char = "K"
 position = Vector2(10, -1414)
 scale = Vector2(1, 5)
 room_name = "central"
-room_number = 50
+room_number = 43
 direction = "left"
-room_char = "J"
+room_char = "O"
 
 [node name="EnemyContainer" type="Node" parent="."]
 

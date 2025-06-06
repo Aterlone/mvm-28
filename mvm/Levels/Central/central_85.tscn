@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="4_hojv7"]
 [ext_resource type="PackedScene" uid="uid://54eovvswiqow" path="res://LevelGeneral/powerup_collectable.tscn" id="5_3clqa"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="6_av1xh"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="7_rrnyv"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="7_rrnyv"]
 
 [node name="Central85" type="Node2D"]
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_5j384"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_3l2pa"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="3_3l2pa"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="4_l4mli"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="4_l4mli"]
 
 [node name="Central90" type="Node2D"]
 

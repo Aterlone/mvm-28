@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvsde3c0416ja"]
+
+[ext_resource type="Script" uid="uid://dys54hcfx5pvv" path="res://tui/settings.gd" id="1_m88a8"]
+[ext_resource type="AudioStream" uid="uid://nwo665dq06w3" path="res://Music/Centralv1.wav" id="2_itadk"]
+[ext_resource type="Script" uid="uid://cfkwu2qshhjkg" path="res://tui/slider_script.gd" id="2_m88a8"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m88a8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -101.0
+offset_right = 136.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+
+[node name="volume" type="HSlider" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+max_value = 10.0
+script = ExtResource("2_m88a8")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Move: Arrow Keys"
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Down: Steel (Power Up)"
+
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Space: Bubble (Power Up)"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 192.0
+offset_top = 18.0
+offset_right = 456.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 37
+text = "Game Settings"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_itadk")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]

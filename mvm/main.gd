@@ -1,7 +1,17 @@
 extends Node2D
 
 @onready var PLAYER = get_node("Player")
+var menu_open: bool = false
 
+func _process(delta):
+	print("x")
+	if Input.is_key_pressed(KEY_ESCAPE):
+		if !menu_open:
+			var room_container = get_node("RoomContainer")
+			var scene = load("res://tui/menu.tscn").instantiate()
+			room_container.add_child(scene)
+		else: 
+			menu_open = false
 
 func warp(warp_node):
 	var next_room = str(warp_node.room_number)

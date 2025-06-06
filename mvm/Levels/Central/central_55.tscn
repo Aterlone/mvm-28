@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_47qqn"]
 [ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="3_47qqn"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="4_dcv1j"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="5_pprws"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="5_pprws"]
 
 [node name="Central55" type="Node2D"]
 

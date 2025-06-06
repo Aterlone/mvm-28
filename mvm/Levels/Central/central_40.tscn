@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://c4lfofogoi7bk"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_qfu27"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="2_804jh"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="2_804jh"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_wp7td"]
 [ext_resource type="PackedScene" uid="uid://dmqxucfiauuqr" path="res://Enemies/snail.tscn" id="3_wp7td"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="7_5m3tt"]
@@ -45,4 +45,4 @@ position = Vector2(797, -238)
 
 [node name="Spikes" parent="." instance=ExtResource("8_u3ex0")]
 position = Vector2(4, -1)
-tile_map_data = PackedByteArray("AAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAApAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAA=")
