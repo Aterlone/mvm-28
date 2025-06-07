@@ -115,7 +115,7 @@ func animate():
 	
 	$Sprite2D.rotation_degrees = 0
 	
-	if joy_y == 1 and velocity.y > 0 and abilities["bubble"]:
+	if Input.is_key_pressed(KEY_SPACE) and velocity.y > 0 and abilities["bubble"]:
 		if $AnimationPlayer.assigned_animation != "Bubble":
 			$AnimationPlayer.play("Bubble")
 		return
@@ -342,7 +342,7 @@ func movement():
 	
 	if joy_y == -1 and abilities["harden"]:
 		hardened()
-	elif joy_y == 1 and velocity.y > 0 and abilities["bubble"]:
+	elif Input.is_key_pressed(KEY_SPACE) and velocity.y > 0 and abilities["bubble"]:
 		bubble()
 	else:
 		movement_x()
