@@ -37,7 +37,7 @@ script = ExtResource("2_m88a8")
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-text = "Move: Arrow Keys"
+text = "Move: WASD"
 
 [node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
