@@ -138,8 +138,8 @@ func animate():
 
 
 func get_controls():
-	joy_y = sign(Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down"))
-	joy_x = sign(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
+	joy_y = sign(Input.get_action_strength("jump") - Input.get_action_strength("move_down"))
+	joy_x = sign(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"))
 	if joy_x != 0:
 		x_direction = joy_x
 	#if Input.is_key_pressed(KEY_G):
