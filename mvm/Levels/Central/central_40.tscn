@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://c4lfofogoi7bk"]
 
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="2_804jh"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="2_804jh"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_wp7td"]
 [ext_resource type="PackedScene" uid="uid://dmqxucfiauuqr" path="res://Enemies/snail.tscn" id="3_wp7td"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="6_804jh"]

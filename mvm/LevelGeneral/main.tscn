@@ -10,13 +10,13 @@ script = ExtResource("1_0si48")
 
 [node name="RoomContainer" type="Node2D" parent="."]
 
-[node name="Central12" parent="RoomContainer" instance=ExtResource("2_evbxg")]
-
 [node name="TitleScreen" parent="RoomContainer" instance=ExtResource("2_0si48")]
 offset_left = 113.773
 offset_top = 195.828
 offset_right = 113.773
 offset_bottom = 195.828
+
+[node name="Central12" parent="RoomContainer" instance=ExtResource("2_evbxg")]
 
 [node name="Player" parent="." instance=ExtResource("3_tpsh3")]
 position = Vector2(133, 211)

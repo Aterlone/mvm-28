@@ -1,16 +1,6 @@
 extends Node2D
 
 @onready var PLAYER = get_node("Player")
-var menu_open: bool = false
-
-func _process(delta):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		if !menu_open:
-			var room_container = get_node("RoomContainer")
-			var scene = load("res://tui/menu.tscn").instantiate()
-			room_container.add_child(scene)
-		else: 
-			menu_open = false
 
 func warp(warp_node):
 	var next_room = str(warp_node.room_number)
@@ -30,7 +20,7 @@ func warp(warp_node):
 	
 	$RoomContainer.add_child(new_level.instantiate())
 	
-	var new_warp = $RoomContainer.get_child(0).get_node("WarpZones").get_node("Warp" + room_char.capitalize())
+	var new_warp = $RoomContainer.get_child(1).get_node("WarpZones").get_node("Warp" + room_char.capitalize())
 	
 	PLAYER.global_position = new_warp.global_position
 	PLAYER.get_node("Camera2D").reset_smoothing()

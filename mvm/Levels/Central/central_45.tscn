@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_reebj"]
 [ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="3_2l08t"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="3_37tal"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="3_37tal"]
 [ext_resource type="PackedScene" uid="uid://cicfde2awvhjy" path="res://Enemies/squirrel.tscn" id="5_2l08t"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="6_tw7p0"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="6_wx1hr"]

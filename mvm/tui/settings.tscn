@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvsde3c0416ja"]
+[gd_scene load_steps=4 format=3 uid="uid://d1ccobx13m55j"]
 
-[ext_resource type="Script" uid="uid://dys54hcfx5pvv" path="res://tui/settings.gd" id="1_m88a8"]
+[ext_resource type="Script" path="res://tui/settings.gd" id="1_m88a8"]
 [ext_resource type="AudioStream" uid="uid://nwo665dq06w3" path="res://Music/Centralv1.wav" id="2_itadk"]
 [ext_resource type="Script" uid="uid://cfkwu2qshhjkg" path="res://tui/slider_script.gd" id="2_m88a8"]
 
