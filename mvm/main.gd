@@ -4,7 +4,6 @@ extends Node2D
 var menu_open: bool = false
 
 func _process(delta):
-	print("x")
 	if Input.is_key_pressed(KEY_ESCAPE):
 		if !menu_open:
 			var room_container = get_node("RoomContainer")
@@ -26,7 +25,6 @@ func warp(warp_node):
 	
 	var new_level_file = "res://Levels/" + next_area.capitalize() + "/" + (next_area + next_room).to_snake_case() + ".tscn" 
 	
-	print(new_level_file)
 	
 	var new_level = load(new_level_file)
 	
@@ -38,3 +36,8 @@ func warp(warp_node):
 	PLAYER.get_node("Camera2D").reset_smoothing()
 	PLAYER.get_node("WarpDelayT").start()
 	PLAYER.set_camera_border()
+	
+	PLAYER.safe_position = null
+	
+	if direction == "up":
+		PLAYER.velocity.y = PLAYER.jump_height * get_physics_process_delta_time()
