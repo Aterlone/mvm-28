@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://ckk004u1qo71v"]
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_x7hck"]
-[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="2_e3cmb"]
+[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="2_e3cmb"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_ys51v"]
 [ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="3_ys51v"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="5_8suhy"]

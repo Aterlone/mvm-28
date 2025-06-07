@@ -39,19 +39,19 @@ position = Vector2(-2735, -3689)
 position = Vector2(-538, -1976)
 
 [node name="Central45" parent="." instance=ExtResource("8_55vs4")]
-position = Vector2(1669, -1612)
+position = Vector2(1672, -1592)
 
 [node name="Central50" parent="." instance=ExtResource("9_cxvgd")]
-position = Vector2(2487, -1673)
+position = Vector2(2488, -1672)
 
 [node name="Central55" parent="." instance=ExtResource("10_cpdi7")]
-position = Vector2(2491, -2887)
+position = Vector2(2488, -2856)
 
 [node name="Central60" parent="." instance=ExtResource("11_w1r0r")]
-position = Vector2(4089, -2423)
+position = Vector2(4104, -1672)
 
 [node name="Central80" parent="." instance=ExtResource("12_gv6r3")]
-position = Vector2(2533, -2888)
+position = Vector2(2520, -2856)
 
 [node name="Central90" parent="." instance=ExtResource("13_acsnt")]
 position = Vector2(1278, -3974)

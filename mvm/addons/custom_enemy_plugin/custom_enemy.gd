@@ -232,7 +232,7 @@ func non_player_hurt(damage, node):
 		die()
 
 
-func hurt(damage, _knockback_coef):
+func hurt(damage):
 	"""This is when the enemy is hurt by the player."""
 	add_spark_particles()
 	# hurt anim / sound / part.

@@ -44,10 +44,10 @@ func on_AttackDurationT_end():  # length of attack anim.
 
 func on_AttackWindUpT_end():  # length of attack wind up / telegraph
 	# movement of attack goes here:
-	print("yo")
-	ENEMY_CONTAINER.add_child(load("res://Enemies/acorn.tscn").instantiate())
-	var acorn = ENEMY_CONTAINER.get_child(ENEMY_CONTAINER.get_child_count() - 1)
-	acorn.global_position = global_position
-	acorn.velocity.x *= sign(scale.x)
+	#print("yo")
+	#ENEMY_CONTAINER.add_child(load("res://Enemies/acorn.tscn").instantiate())
+	#var acorn = ENEMY_CONTAINER.get_child(ENEMY_CONTAINER.get_child_count() - 1)
+	#acorn.global_position = global_position
+	#acorn.velocity.x *= sign(scale.x)
 	
 	pass

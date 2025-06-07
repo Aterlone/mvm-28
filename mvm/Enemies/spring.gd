@@ -12,18 +12,17 @@ var anim_state_to_name = {
 	"DIE" : "Hurt"
 }
 
-@export var flipped = false
 
 func _ready() -> void:
-	health = 2
+	health = 1000000
 	is_walking_enemy = false
 	setup()
 
 
 func _process(delta: float) -> void:
-	
-	if state_dead or !ACTIVE:
-		return
+	pass
+	#if state_dead or !ACTIVE:
+		#return
 	
 	# -------------------------- ANIMATION
 	
@@ -32,23 +31,19 @@ func _process(delta: float) -> void:
 	#if anim_name != null:
 		#$AnimationPlayer.play(anim_name)
 	
-	flash_sprite()
-	SPRITE.scale.x = x_direction
-	HITBOX.scale.x = x_direction
+	#flash_sprite()
+	#SPRITE.scale.x = x_direction
+	#HITBOX.scale.x = x_direction
 	
 	# -------------------------- MOVE AND ATTACK
 	
-	hurt_player()
+	#hurt_player()
 	
-	if state_attack:
+	#if state_attack:
 		#run_attack()
-		return
+		#return
 	
 	#detect_player()
-	
-	if timer_nodes["AttackDelay"].is_stopped():  # only attack after delay
-		init_attack()
-		#return
 	
 	
 	#if !state_hurt:
@@ -58,22 +53,24 @@ func _process(delta: float) -> void:
 		#else: 
 			## enemy follows and attacks when player is found
 			#follow()
-			#
+			#if timer_nodes["AttackDelay"].is_stopped():  # only attack after delay
+				#init_attack()
+				#return
 	#else:
 		#velocity.x = 0
 	
 	# -------------------------- PHYSICS
 	
 	# gravity , terminal velocity clamp, move_and_slide, animate
-	var current_velocity = velocity
+	#var current_velocity = velocity
 	
-	run_physics()
+	#run_physics()
 	
 	# -- WALK ADDEN.
-	
-	if current_velocity.x != 0 and velocity.x == 0 and walking:
-		x_direction *= -1
-		velocity.x = current_velocity.x * -1
+	#
+	#if current_velocity.x != 0 and velocity.x == 0 and walking:
+		#x_direction *= -1
+		#velocity.x = current_velocity.x * -1
 
 
 func idle():
@@ -105,24 +102,3 @@ func init_attack():
 		## winding up
 	#else:
 		## attacking
-
-
-func on_AttackDelayT_end():  # length of pause between attacks
-	pass
-
-
-func on_AttackDurationT_end():  # length of attack anim.
-	state_attack = false
-	timer_nodes["AttackDelay"].wait_time = randf_range(1.6,2.3)
-	timer_nodes["AttackDelay"].start()
-
-
-func on_AttackWindUpT_end():  # length of attack wind up / telegraph
-	# movement of attack goes here:
-	ENEMY_CONTAINER.add_child(load("res://Enemies/acorn.tscn").instantiate())
-	var acorn = ENEMY_CONTAINER.get_child(ENEMY_CONTAINER.get_child_count() - 1)
-	acorn.global_position = global_position
-	if flipped:
-		acorn.velocity.x *= -1
-	
-	pass

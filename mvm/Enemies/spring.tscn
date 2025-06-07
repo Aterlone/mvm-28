@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfe0f70pff0mu"]
+
+[ext_resource type="Script" uid="uid://bk4j6fhatcacc" path="res://Enemies/spring.gd" id="1_53r04"]
+[ext_resource type="Material" uid="uid://cf2j6ea4yumkp" path="res://addons/custom_enemy_plugin/FlashShader.tres" id="2_1rnoq"]
+[ext_resource type="Texture2D" uid="uid://cmxpwgxkvvtwy" path="res://Enemies/slug.png" id="3_5h4p4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7s67"]
+size = Vector2(32, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i7s67"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lflwf"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lflwf"]
+size = Vector2(16, 16)
+
+[node name="Spring" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 0
+script = ExtResource("1_53r04")
+metadata/_custom_type_script = "uid://dcr552qofgphs"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 16.0
+offset_bottom = 8.0
+color = Color(0.83, 0.594833, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("2_1rnoq")
+texture = ExtResource("3_5h4p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i7s67")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 1024
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i7s67")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2048
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lflwf")
+
+[node name="FloorFinder" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorFinder"]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_lflwf")

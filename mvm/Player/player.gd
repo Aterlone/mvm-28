@@ -33,9 +33,9 @@ var terminal_speed_y = 5760000
 var current_animation = ""
 
 var abilities = {
-	"harden" : false,
+	"harden" : true,
 	"bubble" : true,
-	"swim" : false,
+	"swim" : true,
 	"key1" : false,
 	"key2" : false,
 	"key3" : false
@@ -54,7 +54,7 @@ func _ready() -> void:
 func set_camera_border():
 	if get_parent().get_node("RoomContainer").get_children().size() <= 0:
 		return
-	var tiles = get_parent().get_node("RoomContainer").get_child(0).get_node("CollisionTiles")
+	var tiles = get_parent().get_node("RoomContainer").get_child(0).get_node("GrassTiles")
 	var tiles_rect = tiles.get_used_rect()  # format: pos x, pos y, end x, end y
 	var tiles_cell_size = tiles.tile_set.tile_size
 	$Camera2D.limit_top = tiles_rect.position.y * tiles_cell_size.y
@@ -74,8 +74,13 @@ func _physics_process(delta: float) -> void:
 	if $HitBox.get_overlapping_areas().size() > 0:
 		for area in $HitBox.get_overlapping_areas():
 			if area.get_parent().get_parent().name == "EnemyContainer":
-				area.get_parent().queue_free()
-				enemy_hit = true
+				area.get_parent().hurt(1)
+				if "Spring" in area.get_parent().name:
+					velocity.x = 0
+					velocity.y = jump_height * delta * 2
+				else:
+					
+					enemy_hit = true
 	if enemy_hit:
 		velocity.y = jump_height * delta
 				
@@ -111,7 +116,8 @@ func animate():
 	$Sprite2D.rotation_degrees = 0
 	
 	if joy_y == 1 and velocity.y > 0 and abilities["bubble"]:
-		$AnimationPlayer.play("Bubble")
+		if $AnimationPlayer.assigned_animation != "Bubble":
+			$AnimationPlayer.play("Bubble")
 		return
 	
 	if is_on_floor():
@@ -136,19 +142,19 @@ func get_controls():
 	joy_x = sign(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	if joy_x != 0:
 		x_direction = joy_x
-	if Input.is_key_pressed(KEY_G):
-		abilities["swim"] = true
-	else:
-		abilities["swim"] = false
-	if Input.is_key_pressed(KEY_SPACE):
-		abilities["bubble"] = true
-	else:
-		abilities["bubble"] = false
-
-	if Input.is_key_pressed(KEY_DOWN):
-		abilities["harden"] = true
-	else:
-		abilities["harden"] = false
+	#if Input.is_key_pressed(KEY_G):
+		#abilities["swim"] = true
+	#else:
+		#abilities["swim"] = false
+	#if Input.is_key_pressed(KEY_SPACE):
+		#abilities["bubble"] = true
+	#else:
+		#abilities["bubble"] = false
+#
+	#if Input.is_key_pressed(KEY_DOWN):
+		#abilities["harden"] = true
+	#else:
+		#abilities["harden"] = false
 	
 	
 	if Input.get_action_strength("jump") > 0:
@@ -332,6 +338,7 @@ func movement():
 	if $WaterDetector.get_overlapping_areas().size() > 0:
 		water(abilities["swim"])
 		return
+	
 	
 	if joy_y == -1 and abilities["harden"]:
 		hardened()
