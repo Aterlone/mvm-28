@@ -8,8 +8,7 @@ func warp(warp_node):
 	var direction = warp_node.direction
 	var room_char = warp_node.room_char
 	
-	for child in $RoomContainer.get_children():
-		child.queue_free()
+	$RoomContainer.get_child(1).queue_free()
 	
 	await get_tree().process_frame
 	

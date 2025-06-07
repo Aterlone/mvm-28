@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dkqvjvfug6xgy" path="res://LevelGeneral/collision_tiles.tscn" id="1_3lmj4"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="2_3lmj4"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="2_o4xwh"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="2_o4xwh"]
 [ext_resource type="PackedScene" uid="uid://b140gvw8ehff" path="res://Enemies/slug.tscn" id="3_prys8"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="4_qg2gm"]
-[ext_resource type="Script" uid="uid://bk4j6fhatcacc" path="res://Enemies/spring.gd" id="5_gv8w4"]
+[ext_resource type="Script" path="res://Enemies/spring.gd" id="5_gv8w4"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="8_jrcxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg2gm"]
