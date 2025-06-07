@@ -1,11 +1,10 @@
 extends CanvasLayer
 
-
 func _ready() -> void:
+	$Control/Start.connect("pressed", on_Start_pressed)
 	get_tree().paused = true
 
 
-func _on_button_pressed() -> void:
+func on_Start_pressed():
 	get_tree().paused = false
 	queue_free()
-	pass

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://54eovvswiqow" path="res://LevelGeneral/powerup_collectable.tscn" id="5_3clqa"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="6_av1xh"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="6_rrnyv"]
-[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="7_rrnyv"]
+[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="7_rrnyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3b2oa"]
 size = Vector2(64, 128)
@@ -30,7 +30,7 @@ position = Vector2(5488, 576)
 scale = Vector2(10, 1)
 room_name = "central"
 room_number = 90
-direction = "up"
+direction = "down"
 room_char = "N"
 
 [node name="EnemyContainer" type="Node" parent="."]

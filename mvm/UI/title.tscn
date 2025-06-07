@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1xnsahlrtupa"]
+
+[ext_resource type="Script" uid="uid://cql742kvaoosy" path="res://UI/title.gd" id="1_2itqh"]
+
+[node name="Title" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_2itqh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 256.0
+offset_top = 224.0
+offset_right = 384.0
+offset_bottom = 272.0
+text = "Start Game"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 136.0
+scale = Vector2(2, 2)
+text = "Slime's Forest Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1

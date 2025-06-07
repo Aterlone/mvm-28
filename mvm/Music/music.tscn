@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://daued374oc0f4"]
+
+[ext_resource type="AudioStream" uid="uid://nwo665dq06w3" path="res://Music/Centralv1.wav" id="1_d7ysw"]
+[ext_resource type="Script" uid="uid://rg4ug18qxrdo" path="res://Music/music.gd" id="1_dtreh"]
+
+[node name="Music" type="Node"]
+process_mode = 3
+script = ExtResource("1_dtreh")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_d7ysw")
+bus = &"Music"
+
+[node name="FadeT" type="Timer" parent="."]
+one_shot = true

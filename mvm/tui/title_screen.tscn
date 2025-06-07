@@ -4,24 +4,31 @@
 
 [sub_resource type="Theme" id="Theme_v6p8y"]
 
-[node name="TitleScreen" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TitleScreen" type="CanvasLayer"]
 process_mode = 3
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 262.0
-offset_top = 105.0
-offset_right = 402.0
-offset_bottom = 151.0
-theme = SubResource("Theme_v6p8y")
-text = "Start"
 script = ExtResource("1_v6p8y")
 
-[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
+[node name="CanvasLayer" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+layout_mode = 1
+offset_left = 256.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 296.0
+theme = SubResource("Theme_v6p8y")
+text = "Start Game"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_top = 104.0
+offset_right = 640.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 37
+text = "Slime's Forest Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

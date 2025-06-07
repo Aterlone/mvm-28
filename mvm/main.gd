@@ -8,7 +8,7 @@ func warp(warp_node):
 	var direction = warp_node.direction
 	var room_char = warp_node.room_char
 	
-	$RoomContainer.get_child(1).queue_free()
+	$RoomContainer.get_child(0).queue_free()
 	
 	await get_tree().process_frame
 	
@@ -19,7 +19,9 @@ func warp(warp_node):
 	
 	$RoomContainer.add_child(new_level.instantiate())
 	
-	var new_warp = $RoomContainer.get_child(1).get_node("WarpZones").get_node("Warp" + room_char.capitalize())
+	$Music.update(next_area, next_room)
+	
+	var new_warp = $RoomContainer.get_child(0).get_node("WarpZones").get_node("Warp" + room_char.capitalize())
 	
 	PLAYER.global_position = new_warp.global_position
 	PLAYER.get_node("Camera2D").reset_smoothing()
@@ -29,4 +31,4 @@ func warp(warp_node):
 	PLAYER.safe_position = null
 	
 	if direction == "up":
-		PLAYER.velocity.y = PLAYER.jump_height * get_physics_process_delta_time()
+		PLAYER.velocity.y = PLAYER.jump_height * get_physics_process_delta_time() * 1.4
