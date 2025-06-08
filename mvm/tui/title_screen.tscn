@@ -23,6 +23,7 @@ theme = SubResource("Theme_v6p8y")
 text = "Start Game"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+layout_mode = 0
 offset_top = 104.0
 offset_right = 640.0
 offset_bottom = 192.0

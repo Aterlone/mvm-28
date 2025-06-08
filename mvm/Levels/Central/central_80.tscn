@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://2mr14gxv51ft" path="res://Enemies/spikes.tscn" id="3_psxjs"]
 [ext_resource type="PackedScene" uid="uid://bsocgu0gibcp6" path="res://LevelGeneral/back_ground.tscn" id="4_ahgqn"]
 [ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="5_wd5y5"]
-[ext_resource type="PackedScene" path="res://Enemies/spring.tscn" id="7_klyhl"]
+[ext_resource type="PackedScene" uid="uid://cfe0f70pff0mu" path="res://Enemies/spring.tscn" id="7_klyhl"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="8_24rt6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhe15"]

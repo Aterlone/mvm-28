@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://biyuwindes0o5" path="res://LevelGeneral/danger_area.tscn" id="3_3bcvm"]
 [ext_resource type="PackedScene" uid="uid://c6y7cmq7hcll6" path="res://warp_zone.tscn" id="3_b1ti1"]
 [ext_resource type="PackedScene" uid="uid://ddshjbgor4ydj" path="res://LevelGeneral/danger_return_area.tscn" id="4_efd5l"]
-[ext_resource type="PackedScene" uid="uid://cegoc22yqo20e" path="res://LevelGeneral/grass_tiles.tscn" id="4_i42ts"]
+[ext_resource type="PackedScene" path="res://LevelGeneral/grass_tiles.tscn" id="4_i42ts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i42ts"]
 size = Vector2(304, 32)
