@@ -138,7 +138,7 @@ func animate():
 
 
 func get_controls():
-	joy_y = sign(Input.get_action_strength("jump") - Input.get_action_strength("move_down"))
+	joy_y = sign(Input.get_action_strength("jump") - Input.get_action_strength("move_ddown"))
 	joy_x = sign(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"))
 	if joy_x != 0:
 		x_direction = joy_x
